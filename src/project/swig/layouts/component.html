@@ -1,0 +1,9 @@
+{% extends 'src/project/swig/layouts/_base.html' %}
+
+{% block base %}
+
+<div class="component {% block classes %}{% endblock %} {{ classes }}">
+  {% block content %}{% endblock %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'src/project/swig/layouts/module.html' %}
+
+{% block classes %}module-b{% endblock %}
+
+{% block content %}
+<h2>Module B</h2>
+{% endblock %}
+
+{% block items %}
+  {{ helpers.get_items_list_group(items) }}
+{% endblock %}

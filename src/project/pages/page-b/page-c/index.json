@@ -1,0 +1,60 @@
+{
+	"path": "page-b/page-c",
+	"title": "Page C",
+	"classes": "page-c",
+	"includes": [
+		"vendor-a/scripts",
+		"vendor-b/scripts",
+		"scripts/library-b",
+		"scripts/library-c",
+		"common/scripts/common-a",
+		"common/scripts/common-c",
+		"pages/page-b/page-c/scripts",
+		"pages/page-b/page-c/styles.scss"
+	],
+	"items": [{
+		"partial": "templates/template-a",
+		"items": [{
+			"partial": "modules/module-a",
+			"items": [{
+				"partial": "components/component-a",
+				"classes": "custom-style-foo"
+			}, {
+				"partial": "components/component-b",
+				"classes": "custom-style-bar"
+			}, {
+				"partial": "components/component-c",
+				"classes": "custom-style-baz"
+			}]
+		}, {
+			"partial": "modules/module-b",
+			"items": [{
+				"partial": "components/component-a"
+			}, {
+				"partial": "components/component-b"
+			}, {
+				"partial": "components/component-c"
+			}, {
+				"partial": "components/component-a"
+			}, {
+				"partial": "components/component-a"
+			}, {
+				"partial": "components/component-c"
+			}, {
+				"partial": "components/component-a"
+			}]
+		}, {
+			"partial": "modules/module-c",
+			"items": [{
+				"partial": "components/component-c",
+				"classes": "custom-style-baz"
+			}, {
+				"partial": "components/component-b",
+				"classes": "custom-style-foo"
+			}, {
+				"partial": "components/component-a",
+				"classes": "custom-style-bar"
+			}]
+		}]
+	}]
+}
