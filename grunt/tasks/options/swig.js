@@ -25,16 +25,26 @@ module.exports = {
         var title = 'Page Title';
         return input !== undefined ? title + ' | ' + input : title;
       }
-    }
+    },
   },
   dev: {
-    expand: true,
+    dest: '<%= build_dir %>',
     cwd: '<%= app_files.swig.pages.cwd %>',
     src: '<%= app_files.swig.pages.src %>',
     ext: '<%= app_files.swig.pages.ext %>',
-    dest: '<%= build_dir %>',
     rename: function(dest, src) {
       return dest += '/' + src;
-    }
+    },
+    expand: true
+  },
+  dist: {
+    dest: '<%= compile_dir %>',
+    cwd: '<%= app_files.swig.pages.cwd %>',
+    src: '<%= app_files.swig.pages.src %>',
+    ext: '<%= app_files.swig.pages.ext %>',
+    rename: function(dest, src) {
+      return dest += '/' + src;
+    },
+    expand: true
   }
 };

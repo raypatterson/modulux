@@ -1,10 +1,5 @@
 module.exports = function(grunt) {
 
-  console.log('Loaded : load-options.js');
-
-  /**
-   * Loads and formats options
-   */
   function loadOptions(path) {
     var glob = require('glob');
     var object = {};

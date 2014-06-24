@@ -1,23 +1,12 @@
-/**
- * Minifies HTML
- */
-module.exports = {
-  dist: {
-    options: {
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      removeAttributeQuotes: true,
-      removeCommentsFromCDATA: true,
-      removeEmptyAttributes: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      useShortDoctype: true
-    },
-    files: [{
+module.exports = {                     
+    dist: {
+      options: {
+        removeComments: true,
+        collapseWhitespace: true
+      },
       expand: true,
       cwd: '<%= compile_dir %>',
-      src: '{,*/}*.html',
+      src: ['**/*.html'],
       dest: '<%= compile_dir %>'
-    }]
-  }
-};
+    }
+  };

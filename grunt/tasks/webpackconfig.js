@@ -3,8 +3,6 @@ var fs = rekuire('fs-extra');
 
 module.exports = function(grunt) {
 
-  console.log('Loaded : webpackconfig.js');
-
   grunt.registerMultiTask('webpackconfig', 'Webpack Config', function() {
 
     var data = this.data;
@@ -36,9 +34,6 @@ module.exports = function(grunt) {
 
       });
     });
-
-    console.log('keys', keys);
-    console.log('entry', entry);
 
     grunt.config('app_files.webpack.entry', entry);
   });

@@ -2,8 +2,6 @@ var _ = require('lodash');
 
 module.exports = function(grunt) {
 
-  console.log('Loaded : webpackrequire.js');
-
   grunt.registerMultiTask('webpackrequire', 'Webpack Require', function() {
 
     var data = this.data;
@@ -53,8 +51,6 @@ module.exports = function(grunt) {
 
       val = val.substring(val.lastIndexOf(data.cwd) + data.cwd.length);
       key = val.substring(0, val.lastIndexOf(data.ext) - 1).replace('data', 'scripts');
-
-      console.log(key + ':' + val);
 
       filenames = json.includes;
 
