@@ -8,9 +8,7 @@
 		"scripts/library-b",
 		"scripts/library-c",
 		"common/scripts/common-a",
-		"common/scripts/common-c",
-		"pages/scripts",
-		"pages/styles.scss"
+		"common/scripts/common-c"
 	],
 	"items": [{
 		"partial": "templates/template-a",

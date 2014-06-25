@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var path = require('path');
 
 module.exports = function(grunt) {
 
@@ -14,8 +15,10 @@ module.exports = function(grunt) {
     var resolver;
     var template;
     var contents;
+    var requires;
+    var pathname;
 
-    var addPartials = function(data, arr) {
+    var addPartials = function(json, arr) {
 
       added = {};
 
@@ -33,15 +36,22 @@ module.exports = function(grunt) {
           }
 
           if (added[item.partial] !== true) {
+
             added[item.partial] = true;
-            arr.push(item.partial + '/scripts.js');
-            arr.push(item.partial + '/styles.scss');
+
+            requires = grunt.file.expand({
+              cwd: data.partials.cwd + item.partial
+            }, data.partials.match);
+
+            _.each(requires, function(require) {
+              arr.push(item.partial + '/' + require);
+            });
           }
         }
       };
 
-      if (data.items) {
-        resolver(data.items[0]);
+      if (json.items) {
+        resolver(json.items[0]);
       }
     }
 
@@ -49,10 +59,20 @@ module.exports = function(grunt) {
 
       json = rekuire(val);
 
-      val = val.substring(val.lastIndexOf(data.cwd) + data.cwd.length);
-      key = val.substring(0, val.lastIndexOf(data.ext) - 1).replace('data', 'scripts');
-
       filenames = json.includes;
+
+      val = val.substring(data.cwd.length);
+      key = val.substring(0, val.lastIndexOf('.'));
+
+      pathname = key.substring(0, key.lastIndexOf('/'));
+
+      requires = grunt.file.expand({
+        cwd: data.pages.cwd + pathname
+      }, data.pages.match);
+
+      _.each(requires, function(require) {
+        filenames.push(data.pages.rename(pathname, require));
+      });
 
       addPartials(json, filenames);
 
@@ -69,8 +89,6 @@ module.exports = function(grunt) {
       grunt.file.write(filename, contents);
 
     });
-
-    console.log('filenames', filenames);
 
   });
 

@@ -5,7 +5,6 @@ var UglifyJsPlugin = rekuire('node_modules/webpack/lib/optimize/UglifyJsPlugin')
 
 module.exports = {
   options: {
-    context: '<%= app_files.webpack.context %>',
     entry: '<%= app_files.webpack.entry %>',
     resolve: {
       modulesDirectories: '<%= app_files.webpack.module_dirs %>',
@@ -18,15 +17,13 @@ module.exports = {
       new CommonsChunkPlugin('commons.js')
     ],
     module: {
-      loaders: [
-        { 
-          test: /\.scss$/, 
-          loader: 'style!css!sass?outputStyle=expanded!autoprefixer-loader' 
-        }, { 
-          test: /\.json$/, 
-          loader: 'json' 
-        }
-      ]
+      loaders: [{
+        test: /\.scss$/,
+        loader: 'style!css!sass?outputStyle=expanded!autoprefixer-loader'
+      }, {
+        test: /\.json$/,
+        loader: 'json'
+      }]
     },
   },
   dev: {

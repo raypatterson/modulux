@@ -1,5 +1,5 @@
 module.exports = {
-  
+
   root_dir: __dirname,
   source_dir: 'src',
   build_dir: '.tmp',
@@ -36,20 +36,41 @@ module.exports = {
     },
 
     webpackrequire: {
-      watch: ['./src/_entry/*.js'],
+      pages: {
+        cwd: './src/project/pages/',
+        match: ['*.{js,scss}'],
+        rename: function(dest, src) {
+          if (dest) {
+            src = dest + '/' + src;
+          }
+          return 'pages/' + src;
+        }
+      },
+      partials: {
+        cwd: './src/project/swig/partials/',
+        match: ['*.{js,scss}']
+      },
       match: ['./src/project/pages/**/*.json'],
       cwd: './src/project/pages/',
       ext: 'json'
     },
 
     webpack: {
-      context: './',
       module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
-      watch: ['./src/{,*/}*.{js,json,scss}', '!./src/vendor/{,*/}*.*'],
+      watch: ['./src/**/*.{js,json,scss}', '!./src/vendor/**/*.*'],
       match: ['./src/*.js', '!./src/*.spec.js'],
-      cwd: './src/',
+      cwd: '.',
       ext: 'js'
     },
+
+    // webpack: {
+    //   context: './',
+    //   module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
+    //   watch: ['./src/**/*.{js,json,scss}', '!./src/vendor/**/*.*'],
+    //   match: ['./src/*.js', '!./src/*.spec.js'],
+    //   cwd: './src/',
+    //   ext: 'js'
+    // },
 
     js: ['src/{,*/}*.js', '!src/{,*/}*.spec.js', '!src/_entry/*.js'],
     jsunit: ['src/**/*.spec.js'],
