@@ -18,11 +18,14 @@ module.exports = {
     ],
     module: {
       loaders: [{
-        test: /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded!autoprefixer-loader'
-      }, {
         test: /\.json$/,
         loader: 'json'
+      }, {
+        test: /\.css$/,
+        loader: 'style!css'
+      }, {
+        test: /\.scss$/,
+        loader: 'style!css!sass?outputStyle=expanded!autoprefixer-loader'
       }]
     },
   },

@@ -2,7 +2,10 @@
 
 {% block base %}
 
-<div class="module {% block classes %}{% endblock %} {{ classes }}">
+<div 
+  class="module {% block classes %}{% endblock %} {{ classes }} pure-u-1-{{ length }}" 
+  style="width:{{ width }}%;"
+  >
 
   {% block content %}{% endblock %}
 

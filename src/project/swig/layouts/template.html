@@ -2,13 +2,17 @@
 
 {% block base %}
 
-<div class="template {% block classes %}{% endblock %} {{ classes }}">
+<div class="template {% block classes %}{% endblock %} {{ classes }} pure-g">
 
-  {% block content %}{% endblock %}
+  <div class="headline pure-u-1">
+  {% block content %}
+  {% endblock %}
+  </div>
 
   {% if items %}
-  <div class="items">
-    {% block items %}{% endblock %}
+  <div class="items pure-u-1">
+    {% block items %}
+    {% endblock %}
   </div>
   {% endif %}
 

@@ -9,6 +9,9 @@
 
 {% macro get_items(items) %}
   {% for item in items %}
+    {% set item.length = loop.length %}
+    {% set item.idx = loop.index0 %}
+    {% set item.width = ( 99 / loop.length ) %}
     {{ get_item(item.partial, item) }}
   {% endfor %}
 {% endmacro %}
