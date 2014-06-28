@@ -57,20 +57,11 @@ module.exports = {
 
     webpack: {
       module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
-      watch: ['./src/**/*.{js,json,scss}', '!./src/vendor/**/*.*'],
+      watch: ['./src/**/*.{js,json,scss}', '!./bower_components', '!./node_modules', '!./src/vendor/**/*.*'],
       match: ['./src/*.js', '!./src/*.spec.js'],
       cwd: '.',
       ext: 'js'
     },
-
-    // webpack: {
-    //   context: './',
-    //   module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
-    //   watch: ['./src/**/*.{js,json,scss}', '!./src/vendor/**/*.*'],
-    //   match: ['./src/*.js', '!./src/*.spec.js'],
-    //   cwd: './src/',
-    //   ext: 'js'
-    // },
 
     js: ['src/{,*/}*.js', '!src/{,*/}*.spec.js', '!src/_entry/*.js'],
     jsunit: ['src/**/*.spec.js'],

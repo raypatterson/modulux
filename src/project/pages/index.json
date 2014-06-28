@@ -11,6 +11,7 @@
 		"common/scripts/common-c"
 	],
 	"items": [{
+		"headline": "Welcome to the Modulux Demo",
 		"partial": "templates/template-a",
 		"items": [{
 			"partial": "modules/module-a",

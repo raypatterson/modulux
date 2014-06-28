@@ -25,6 +25,6 @@ module.exports = {
   },
   webpack: {
     files: ['<%= app_files.webpack.watch %>'],
-    tasks: ['webpack:dev']
+    tasks: ['webpackconfig:dev', 'webpackrequire:dev', 'webpack:dev']
   }
 };
