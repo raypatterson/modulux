@@ -14,6 +14,11 @@ module.exports = {
 
     assets_src: ['./{,*/}fonts/{,*/}*', './{,*/}images/{,*/}*'],
 
+    copy: {
+      cwd: './src/',
+      src: ['**/*.{jpg,png,gif}']
+    },
+
     swig: {
       watch: ['./src/{,*/}*.{swig,json}', './src/**/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
       basepath: __dirname,

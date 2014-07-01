@@ -4,7 +4,10 @@
 
 <div class="template {% block classes %}{% endblock %} {{ classes }}">
 
-  {% block content %}
+  {% block header %}
+  {% endblock %}
+
+  {% block headline %}
   {% endblock %}
 
   {% if items %}
@@ -13,6 +16,9 @@
     {% endblock %}
   </div>
   {% endif %}
+
+  {% block footer %}
+  {% endblock %}
 
 </div>
 
