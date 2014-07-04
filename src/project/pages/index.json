@@ -45,7 +45,7 @@
 				]
 			}, {
 				"partial": "components/component-c",
-				"image_src": "project/images/fpo.jpg"
+				"image_src": "/project/images/fpo.jpg"
 			}, {
 				"partial": "components/component-a",
 				"classes": "custom-style-bar",

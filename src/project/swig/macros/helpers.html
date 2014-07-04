@@ -20,6 +20,8 @@
   <ul class="{{ classes }}">
   {% for item in items %}
     <li class="list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
+    {% set item.length = loop.length %}
+    {% set item.idx = loop.index0 %}
     {{ get_item(item.partial, item) }}
     </li>
   {% endfor %}

@@ -15,14 +15,16 @@ module.exports = {
       cache: false,
       locals: {
         rootDir: '<%= root_dir %>',
-        getPartialPath: function(input) {
+        getPartialPath: function(slug) {
           var cfg = grunt.config.get('app_files.swig.partials');
-          return cfg.src + input + cfg.filepath;
+          var src = cfg.src + slug + cfg.filepath;
+          console.log('src', src);
+          return src;
         },
         setDefaultsData: function(slug, item) {
           var cfg = require('grunt').config.get('app_files.swig.partials');
-          var datapath = cfg.src + slug + cfg.datapath;
-          item.defaults = grunt.file.exists(datapath) ? grunt.file.readJSON(datapath) : {};
+          var src = cfg.src + slug + cfg.datapath;
+          item.defaults = grunt.file.exists(src) ? grunt.file.readJSON(src) : {};
           return item;
         }
       }
