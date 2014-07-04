@@ -1,0 +1,15 @@
+{% extends 'src/project/swig/layouts/module.html' %}
+
+{% block classes %}header{% endblock %}
+
+{% block content %}
+
+  <div>Logo</div>
+  
+  <div class="title pure-u-1">
+    <h1>{{ title }}</h1>
+  </div> 
+  
+  {{ helpers.get_items_list(defaults.menu.items, 'menu') }}
+
+{% endblock %}

@@ -20,7 +20,7 @@ module.exports = {
     },
 
     swig: {
-      watch: ['./src/{,*/}*.{swig,json}', './src/**/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
+      watch: ['./src/project/pages/**/*.{swig,json}', './src/project/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
       basepath: __dirname,
       pages: {
         cwd: './src/project/pages/',
@@ -29,7 +29,8 @@ module.exports = {
       },
       partials: {
         src: __dirname + '/src/project/swig/partials/',
-        filepath: '/index.html'
+        filepath: '/index.html',
+        datapath: '/index.json',
       }
     },
 

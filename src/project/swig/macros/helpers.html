@@ -1,9 +1,10 @@
 {% macro get_item(slug, item) %}
   {% set partialpath = getPartialPath(slug) %}
-  {% if item != undefined %}
-    {% include partialpath with item only %}
-  {% else %}
+  {% if not item  %}
     {% include partialpath %}
+  {% else %}
+    {% set item = setDefaultsData(slug, item) %}
+    {% include partialpath with item only %}
   {% endif %}
 {% endmacro %}
 
@@ -15,8 +16,8 @@
   {% endfor %}
 {% endmacro %}
 
-{% macro get_items_list(items) %}
-  <ul>
+{% macro get_items_list(items, classes) %}
+  <ul class="{{ classes }}">
   {% for item in items %}
     <li class="list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
     {{ get_item(item.partial, item) }}
