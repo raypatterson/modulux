@@ -29,7 +29,7 @@ module.exports = {
       },
       partials: {
         src: __dirname + '/src/project/swig/partials/',
-        filepath: '/partial.html'
+        filepath: '/index.html'
       }
     },
 
