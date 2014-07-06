@@ -1,6 +1,6 @@
 /**
  * Build Swig templates
- * https://github.com/gustavohenke/grunt-swig2
+ * https://github.com/RayPatterson/grunt-swig2
  */
 
 var grunt = require('grunt');
@@ -8,17 +8,15 @@ var grunt = require('grunt');
 module.exports = {
   options: {
     basepath: '<%= app_files.swig.basepath %>',
-    autoescape: true,
-    cache: false,
+    pagepath: '<%= app_files.swig.pages.cwd %>',
     swigOptions: {
       autoescape: true,
       cache: false,
       locals: {
         rootDir: '<%= root_dir %>',
-        getPartialPath: function(slug) {
+        getPartialPath: function(slug, item) {
           var cfg = grunt.config.get('app_files.swig.partials');
           var src = cfg.src + slug + cfg.filepath;
-          console.log('src', src);
           return src;
         },
         setDefaultsData: function(slug, item) {
@@ -26,6 +24,12 @@ module.exports = {
           var src = cfg.src + slug + cfg.datapath;
           item.defaults = grunt.file.exists(src) ? grunt.file.readJSON(src) : {};
           return item;
+        },
+        addResources: function(slug, item) {
+          // console.log('with', item);
+          // console.log('add resource', slug);
+          // console.log('to page', item.page);
+          // console.log('---');
         }
       }
     },

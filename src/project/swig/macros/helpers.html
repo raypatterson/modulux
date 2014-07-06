@@ -1,5 +1,6 @@
 {% macro get_item(slug, item) %}
-  {% set partialpath = getPartialPath(slug) %}
+  {% set resources = addResources(slug, item) %}
+  {% set partialpath = getPartialPath(slug, item) %}
   {% if not item  %}
     {% include partialpath %}
   {% else %}
