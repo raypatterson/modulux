@@ -14,17 +14,23 @@ module.exports = {
 
     assets_src: ['./{,*/}fonts/{,*/}*', './{,*/}images/{,*/}*'],
 
+    copy: {
+      cwd: './src/',
+      src: ['**/*.{jpg,png,gif}']
+    },
+
     swig: {
-      watch: ['./src/{,*/}*.{swig,json}', './src/**/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
+      watch: ['./src/project/pages/**/*.{swig,json}', './src/project/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
       basepath: __dirname,
       pages: {
-        cwd: './src/project/pages/',
+        cwd: 'src/project/pages/',
         src: ['**/*.swig'],
         ext: '.html',
       },
       partials: {
         src: __dirname + '/src/project/swig/partials/',
-        filepath: '/partial.html'
+        filepath: '/index.html',
+        datapath: '/index.json',
       }
     },
 
@@ -57,20 +63,11 @@ module.exports = {
 
     webpack: {
       module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
-      watch: ['./src/**/*.{js,json,scss}', '!./src/vendor/**/*.*'],
+      watch: ['./src/**/*.{js,json,scss}', '!./bower_components', '!./node_modules', '!./src/vendor/**/*.*'],
       match: ['./src/*.js', '!./src/*.spec.js'],
       cwd: '.',
       ext: 'js'
     },
-
-    // webpack: {
-    //   context: './',
-    //   module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
-    //   watch: ['./src/**/*.{js,json,scss}', '!./src/vendor/**/*.*'],
-    //   match: ['./src/*.js', '!./src/*.spec.js'],
-    //   cwd: './src/',
-    //   ext: 'js'
-    // },
 
     js: ['src/{,*/}*.js', '!src/{,*/}*.spec.js', '!src/_entry/*.js'],
     jsunit: ['src/**/*.spec.js'],

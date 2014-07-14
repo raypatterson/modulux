@@ -1,0 +1,9 @@
+{% extends 'src/project/swig/layouts/component.html' %}
+
+{% block classes %}component-b{% endblock %}
+
+{% block content %}
+  {% for paragraph in paragraphs %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+{% endblock %}

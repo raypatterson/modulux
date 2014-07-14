@@ -17,14 +17,10 @@ module.exports = {
   },
   swig: {
     files: ['<%= app_files.swig.watch %>'],
-    tasks: ['swig:dev']
-  },
-  webpackconfig: {
-    files: ['<%= app_files.webpackconfig.watch %>'],
-    tasks: ['webpackconfig:dev', 'webpackrequire:dev']
+    tasks: ['copy:dev', 'swig:dev', 'webpackconfig:dev', 'webpackrequire:dev', 'webpack:dev']
   },
   webpack: {
     files: ['<%= app_files.webpack.watch %>'],
-    tasks: ['webpack:dev']
+    tasks: ['copy:dev', 'swig:dev', 'webpackconfig:dev', 'webpackrequire:dev', 'webpack:dev']
   }
 };

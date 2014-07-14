@@ -1,0 +1,1 @@
+require('utils/hello.js')('Init Component B', '.component-b');

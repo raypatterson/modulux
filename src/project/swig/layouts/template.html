@@ -4,13 +4,21 @@
 
 <div class="template {% block classes %}{% endblock %} {{ classes }}">
 
-  {% block content %}{% endblock %}
+  {% block header %}
+  {% endblock %}
+
+  {% block headline %}
+  {% endblock %}
 
   {% if items %}
-  <div class="items">
-    {% block items %}{% endblock %}
+  <div class="items pure-g">
+    {% block items %}
+    {% endblock %}
   </div>
   {% endif %}
+
+  {% block footer %}
+  {% endblock %}
 
 </div>
 

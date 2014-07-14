@@ -1,22 +1,28 @@
 {% macro get_item(slug, item) %}
-  {% set partialpath = getPartialPath(slug) %}
-  {% if item != undefined %}
-    {% include partialpath with item only %}
-  {% else %}
+  {% set resources = addResources(slug, item) %}
+  {% set partialpath = getPartialPath(slug, item) %}
+  {% if not item  %}
     {% include partialpath %}
+  {% else %}
+    {% set item = setDefaultsData(slug, item) %}
+    {% include partialpath with item only %}
   {% endif %}
 {% endmacro %}
 
 {% macro get_items(items) %}
   {% for item in items %}
+    {% set item.length = loop.length %}
+    {% set item.idx = loop.index0 %}
     {{ get_item(item.partial, item) }}
   {% endfor %}
 {% endmacro %}
 
-{% macro get_items_list(items) %}
-  <ul>
+{% macro get_items_list(items, classes) %}
+  <ul class="{{ classes }}">
   {% for item in items %}
     <li class="list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
+    {% set item.length = loop.length %}
+    {% set item.idx = loop.index0 %}
     {{ get_item(item.partial, item) }}
     </li>
   {% endfor %}

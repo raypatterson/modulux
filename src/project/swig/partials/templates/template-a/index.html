@@ -2,8 +2,14 @@
 
 {% block classes %}template-a{% endblock %}
 
-{% block content %}
-<h2>Template A</h2>
+{% block header %}
+  {{ helpers.get_item('modules/header', header) }}
+{% endblock %}
+
+{% block headline %}
+<div class="headline pure-u-1">
+  <h2>{{ headline }}</h2>
+</div> 
 {% endblock %}
 
 {% block items %}

@@ -81,13 +81,4 @@ bower_components
 
 # Project specific #
 ####################
-.elasticbeanstalk
-.springBeans
-tmp
 dist
-build
-public
-target
-components
-bin
-vendor
