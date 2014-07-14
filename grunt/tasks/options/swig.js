@@ -23,13 +23,16 @@ module.exports = {
           var cfg = require('grunt').config.get('app_files.swig.partials');
           var src = cfg.src + slug + cfg.datapath;
           item.defaults = grunt.file.exists(src) ? grunt.file.readJSON(src) : {};
+
+          // console.log('item', item);
+          console.log('grunt', grunt);
           return item;
         },
-        addResources: function(slug, item) {
+        addResources: function(slug, item, page) {
           // console.log('with', item);
-          // console.log('add resource', slug);
-          // console.log('to page', item.page);
-          // console.log('---');
+          console.log('add resource', slug);
+          console.log('to page', page);
+          console.log('---');
         }
       }
     },

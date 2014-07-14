@@ -5,6 +5,8 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('webpackrequire', 'Webpack Require', function() {
 
+    grunt.xxx = "foo";
+
     var data = this.data;
     var arr = grunt.file.expand(data.match);
     var temp_dir = grunt.config('temp_dir');
