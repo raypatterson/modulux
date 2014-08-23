@@ -25,14 +25,16 @@ module.exports = {
           item.defaults = grunt.file.exists(src) ? grunt.file.readJSON(src) : {};
 
           // console.log('item', item);
-          console.log('grunt', grunt);
           return item;
         },
         addResources: function(slug, item, page) {
           // console.log('with', item);
-          console.log('add resource', slug);
-          console.log('to page', page);
-          console.log('---');
+          // TODO: Here is where the Webpack resources need to be required, REMEMBER WHERE YOU WERE!
+          if (slug === 'modules/header') {
+            console.log('add resource', slug);
+            console.log('to page', page);
+            console.log('---');
+          }
         }
       }
     },

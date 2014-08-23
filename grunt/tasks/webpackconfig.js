@@ -1,3 +1,9 @@
+/**
+ *
+ * Configures entry points for Webpack from
+ *
+ */
+
 var _ = rekuire('lodash');
 var fs = rekuire('fs-extra');
 
@@ -6,14 +12,12 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('webpackconfig', 'Webpack Config', function() {
 
     var data = this.data;
-    var arr = grunt.file.expand(data.match);
-    var files = grunt.file.expand(data.watch);
-    var temp_dir = grunt.config('temp_dir');
-    var keys = [];
-    var entry = {};
-    var filename;
 
+    var temp_dir = grunt.config('temp_dir');
     fs.removeSync(temp_dir);
+
+    var arr = grunt.file.expand(data.match);
+    var keys = [];
 
     _.map(arr, function(val, key) {
 
@@ -21,6 +25,10 @@ module.exports = function(grunt) {
       keys.push(key);
 
     });
+
+    var entry = {};
+    var filename;
+    var files = grunt.file.expand(data.watch);
 
     _.each(keys, function(key) {
 

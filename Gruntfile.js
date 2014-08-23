@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
   grunt.loadTasks(__dirname + '/grunt/tasks');
 
-  grunt.registerTask('default', ['build', 'compile']);
+  grunt.registerTask('default', ['build']);
 
   grunt.loadNpmTasks('grunt-webpack');
 

@@ -5,12 +5,10 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('webpackrequire', 'Webpack Require', function() {
 
-    grunt.xxx = "foo";
-
     var data = this.data;
     var arr = grunt.file.expand(data.match);
     var temp_dir = grunt.config('temp_dir');
-    var filenames = [];
+    var resources = [];
     var filename;
     var added;
     var json;
@@ -20,6 +18,7 @@ module.exports = function(grunt) {
     var requires;
     var pathname;
 
+    // Recursive function
     var addPartials = function(json, arr) {
 
       added = {};
@@ -57,37 +56,51 @@ module.exports = function(grunt) {
       }
     }
 
+    // Iterate though JSON file paths
     _.map(arr, function(val, key) {
 
+      // Get JSON file
       json = rekuire(val);
 
-      filenames = json.includes;
+      // Assign includes array to page resources array
+      resources = json.includes;
 
+      // String wranglin'...
       val = val.substring(data.cwd.length);
       key = val.substring(0, val.lastIndexOf('.'));
 
+      // ... to get page root directory
       pathname = key.substring(0, key.lastIndexOf('/'));
 
+      // console.log(pathname);
+
+      // Get an array of matched files in the page root directory (E.g. 'js', 'scss')
       requires = grunt.file.expand({
         cwd: data.pages.cwd + pathname
       }, data.pages.match);
 
+      // Add page file paths to page resources array 
       _.each(requires, function(require) {
-        filenames.push(data.pages.rename(pathname, require));
+        resources.push(data.pages.rename(pathname, require));
       });
 
-      addPartials(json, filenames);
+      // Recursively add file paths from JSON to page resources array
+      addPartials(json, resources);
 
+      // Temp page JS file path
       filename = temp_dir + key + '.js';
 
+      // TODO: Remove dependency. This file was created by 'grunt webpackconfig'
       template = grunt.file.read(filename);
 
+      // Process template 
       contents = grunt.template.process(template, {
         data: {
-          items: filenames
+          items: resources
         }
       });
 
+      // Write file
       grunt.file.write(filename, contents);
 
     });
