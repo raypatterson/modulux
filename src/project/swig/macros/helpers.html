@@ -1,5 +1,5 @@
 {% macro get_item(slug, item) %}
-  {% set resources = addResources(slug, item) %}
+  {% set resources = addResources(slug, item, page) %}
   {% set partialpath = getPartialPath(slug, item) %}
   {% if not item  %}
     {% include partialpath %}
@@ -17,8 +17,8 @@
   {% endfor %}
 {% endmacro %}
 
-{% macro get_items_list(items, classes) %}
-  <ul class="{{ classes }}">
+{% macro get_items_list(items) %}
+  <ul>
   {% for item in items %}
     <li class="list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
     {% set item.length = loop.length %}

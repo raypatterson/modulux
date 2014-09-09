@@ -1,15 +1,12 @@
 {
-  "menu": {
-    "items": [{
-      "partial": "components/component-d",
-      "title": "Foo"
-    }, {
-      "partial": "components/component-d",
-      "title": "Bar"
-    }, {
-      "partial": "components/component-d",
-      "title": "Baz"
-    }]
-  }
-
+  "items": [{
+    "partial": "components/component-d",
+    "title": "Foo"
+  }, {
+    "partial": "components/component-d",
+    "title": "Bar"
+  }, {
+    "partial": "components/component-d",
+    "title": "Baz"
+  }]
 }
