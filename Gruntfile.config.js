@@ -54,7 +54,13 @@ module.exports = {
       },
       partials: {
         cwd: './src/project/swig/partials/',
-        match: ['*.{js,scss}']
+        match: ['*.{js,scss}'],
+        rename: function(dest, src) {
+          if (dest) {
+            src = dest + '/' + src;
+          }
+          return 'partials/' + src;
+        }
       },
       match: ['./src/project/pages/**/*.json'],
       cwd: './src/project/pages/',

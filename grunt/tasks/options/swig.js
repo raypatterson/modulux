@@ -4,6 +4,10 @@
  */
 
 var grunt = require('grunt');
+var fs = require('fs-extra');
+var _ = require('lodash');
+
+var resources = {};
 
 module.exports = {
   options: {
@@ -27,14 +31,28 @@ module.exports = {
           // console.log('item', item);
           return item;
         },
-        addResources: function(slug, item, page) {
-          // console.log('with', item);
+        addResources: function(pathname, item, page) {
+
           // TODO: Here is where the Webpack resources need to be required, REMEMBER WHERE YOU WERE!
-          if (slug === 'modules/header') {
-            console.log('add resource', slug);
-            console.log('to page', page);
-            console.log('---');
+          // NOTE: page comes from the Swig Grunt task you modified
+
+          var cfg = grunt.config('app_files.webpackrequire');
+
+          var resources = cfg.resources || {};
+
+          if (!resources[page]) {
+            resources[page] = [];
           }
+
+          var requires = grunt.file.expand({
+            cwd: cfg.partials.cwd + pathname
+          }, cfg.partials.match);
+
+          _.each(requires, function(require) {
+            resources[page].push(pathname + '/' + require);
+          });
+
+          grunt.config('app_files.webpackrequire.resources', resources);
         }
       }
     },

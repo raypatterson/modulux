@@ -3,61 +3,65 @@ var path = require('path');
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('webpackrequire', 'Webpack Require', function() {
+  var temp_dir = grunt.config('temp_dir');
+  var arr;
+  var resources = [];
+  var filename;
+  var added;
+  var json;
+  var resolver;
+  var template;
+  var contents;
+  var requires;
+  var includes;
+  var pathname;
 
-    var data = this.data;
-    var arr = grunt.file.expand(data.match);
-    var temp_dir = grunt.config('temp_dir');
-    var resources = [];
-    var filename;
-    var added;
-    var json;
-    var resolver;
-    var template;
-    var contents;
-    var requires;
-    var pathname;
+  // Recursive function
+  var addPartials = function(json, resources, data) {
 
-    // Recursive function
-    var addPartials = function(json, arr) {
+    added = {};
 
-      added = {};
+    resolver = function(item, data) {
 
-      resolver = function(item) {
-
-        if (item.partial) {
-          if (item.items) {
-            (function(items) {
-              var i = 0;
-              var l = items.length;
-              for (i; i < l; i++) {
-                resolver(items[i]);
-              }
-            }(item.items));
-          }
-
-          if (added[item.partial] !== true) {
-
-            added[item.partial] = true;
-
-            requires = grunt.file.expand({
-              cwd: data.partials.cwd + item.partial
-            }, data.partials.match);
-
-            _.each(requires, function(require) {
-              arr.push(item.partial + '/' + require);
-            });
-          }
+      if (item.partial) {
+        if (item.items) {
+          (function(items) {
+            var i = 0;
+            var l = items.length;
+            for (i; i < l; i++) {
+              resolver(items[i], data);
+            }
+          }(item.items));
         }
-      };
 
-      if (json.items) {
-        resolver(json.items[0]);
+        if (added[item.partial] !== true) {
+
+          added[item.partial] = true;
+
+          requires = grunt.file.expand({
+            cwd: data.partials.cwd + item.partial
+          }, data.partials.match);
+
+          _.each(requires, function(require) {
+            resources.push(item.partial + '/' + require);
+          });
+        }
       }
+    };
+
+    if (json.items) {
+      resolver(json.items[0], data);
     }
+  }
+
+  addResources = function(data) {
+
+    filelist = grunt.file.expand(data.match);
+
+    console.log('addResources:', filelist);
 
     // Iterate though JSON file paths
-    _.map(arr, function(val, key) {
+    _.map(filelist, function(val, key) {
 
       // Get JSON file
       json = rekuire(val);
@@ -65,14 +69,22 @@ module.exports = function(grunt) {
       // Assign includes array to page resources array
       resources = json.includes;
 
-      // String wranglin'...
+      // String wranglin' ...
       val = val.substring(data.cwd.length);
       key = val.substring(0, val.lastIndexOf('.'));
 
       // ... to get page root directory
       pathname = key.substring(0, key.lastIndexOf('/'));
 
-      // console.log(pathname);
+      // See if there are some includes in the config data
+      // NOTE: These are added by swig:dev in the addResources helper function
+      // TODO: Clean this up
+      var i = data.cwd.replace(/.\//, '');
+      i = i.substring(0, i.length - 1);
+      if (pathname) {
+        i += '/' + pathname;
+      }
+      resources = resources.concat(data.resources[i]);
 
       // Get an array of matched files in the page root directory (E.g. 'js', 'scss')
       requires = grunt.file.expand({
@@ -85,12 +97,12 @@ module.exports = function(grunt) {
       });
 
       // Recursively add file paths from JSON to page resources array
-      addPartials(json, resources);
+      addPartials(json, resources, data);
 
+      // TODO: Remove dependency. This file was created by 'grunt webpackconfig'
       // Temp page JS file path
       filename = temp_dir + key + '.js';
 
-      // TODO: Remove dependency. This file was created by 'grunt webpackconfig'
       template = grunt.file.read(filename);
 
       // Process template 
@@ -104,6 +116,11 @@ module.exports = function(grunt) {
       grunt.file.write(filename, contents);
 
     });
+  };
+
+  grunt.registerMultiTask('webpackrequire', 'Webpack Require', function() {
+
+    addResources(this.data);
 
   });
 
