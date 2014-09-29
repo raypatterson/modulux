@@ -10,7 +10,7 @@
     "common/scripts/common-c"
   ],
   "items": [{
-    "partial": "templates/template-a",
+    "partial": "templates/template-b",
     "header": {
       "title": "Kickstarter Flannel"
     },

@@ -13,6 +13,7 @@
   {% if items %}
   <div class="items pure-g">
     {% block items %}
+      {{ helpers.get_items(items) }}
     {% endblock %}
   </div>
   {% endif %}
