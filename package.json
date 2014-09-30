@@ -21,6 +21,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-connect": "^0.8.0",
     "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-swig2": "https://github.com/RayPatterson/grunt-swig2/tarball/7b3ac7f96af3f990b219768583105eb66d079635",

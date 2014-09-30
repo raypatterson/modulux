@@ -21,6 +21,11 @@ module.exports = function(grunt) {
 
     added = {};
 
+    // console.log('json', json);
+    // console.log('resources', resources);
+    // console.log('data', data);
+    console.log('----');
+
     resolver = function(item, data) {
 
       if (item.partial) {
@@ -58,7 +63,7 @@ module.exports = function(grunt) {
 
     filelist = grunt.file.expand(data.match);
 
-    console.log('addResources:', filelist);
+    // console.log('addResources:', filelist);
 
     // Iterate though JSON file paths
     _.map(filelist, function(val, key) {
@@ -77,7 +82,7 @@ module.exports = function(grunt) {
       pathname = key.substring(0, key.lastIndexOf('/'));
 
       // See if there are some includes in the config data
-      // NOTE: These are added by swig:dev in the addResources helper function
+      // NOTE: These are added in the swig2 task, addResources helper function
       // TODO: Clean this up
       var i = data.cwd.replace(/.\//, '');
       i = i.substring(0, i.length - 1);
@@ -85,6 +90,8 @@ module.exports = function(grunt) {
         i += '/' + pathname;
       }
       resources = resources.concat(data.resources[i]);
+
+      console.log('data.resources[i]', data.resources[i]);
 
       // Get an array of matched files in the page root directory (E.g. 'js', 'scss')
       requires = grunt.file.expand({
