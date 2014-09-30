@@ -10,11 +10,17 @@ Using [webpack](https://webpack.github.io/) & [Swig](https://paularmstrong.githu
 
 #How does it work?
 
-It uses Swig and Webpack (and for now, [Grunt](http://gruntjs.com/))! 
+It uses Swig and Webpack (and for now, [Grunt](http://gruntjs.com/)).
 
-What do I need to do to get it working?
+A long and detailed description of how this works isn't valuable since it will undergoing much change with the first major update. If you've used Swig or Webpack before you'll probably be able to understand what's going on. 
 
-Right now, the easiest way is to clone the repo, start makign edits and see what happens.
+If you have any questions, [open an issue](https://github.com/RayPatterson/modulux/issues)!
+
+---
+
+#What do I do now?
+
+Right now, the easiest way to check it out is to clone the repo, start making edits and see what happens.
 
 `$ npm i; bower i; grunt server`
 
@@ -34,19 +40,19 @@ Because it was the love-child of an experiment with Swig and Webpack using Grunt
 
 Once it's a slimmer NodeJS package, it'll need some tests.
 
-It does everything I wanted it to do right now, so if you have feature requests, [open an issue](https://github.com/RayPatterson/modulux/issues)!
+It does everything I wanted it to do right now, so if you have any feature requests, [open an issue](https://github.com/RayPatterson/modulux/issues)!
 
 ---
 
 #Is that it?
 
-A long and detailed description of how this works isn't valuable since it will undergoing much change with the first major update. If you've used Swig or Webpack before you'll probably be able to understand what's going on. If you'd like to discuss the problems it's attempting to solve please feel free to [open an issue](https://github.com/RayPatterson/modulux/issues)!
+If you'd like to discuss the problems it's attempting to solve please feel free to [open an issue](https://github.com/RayPatterson/modulux/issues)!
 
 ---
 
 #Thanks!
 
-I'f you have feedback, [open an issue](https://github.com/RayPatterson/modulux/issues)!
+If you have any feedback, [open an issue](https://github.com/RayPatterson/modulux/issues)!
 
 Here's a cool picture of some futuristic looking, modular living space:
 
