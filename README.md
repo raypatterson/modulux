@@ -10,7 +10,7 @@ Using [webpack](https://webpack.github.io/) & [Swig](https://paularmstrong.githu
 
 #How does it work?
 
-It Swig and Webpack (and for now, [Grunt](http://gruntjs.com/))! 
+It uses Swig and Webpack (and for now, [Grunt](http://gruntjs.com/))! 
 
 What do I need to do to get it working?
 
