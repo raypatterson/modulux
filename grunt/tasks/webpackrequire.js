@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   var temp_dir = grunt.config('temp_dir');
   var arr;
   var resources = [];
+  var resource;
   var filename;
   var added;
   var json;
@@ -17,14 +18,7 @@ module.exports = function(grunt) {
   var pathname;
 
   // Recursive function
-  var addPartials = function(json, resources, data) {
-
-    added = {};
-
-    // console.log('json', json);
-    // console.log('resources', resources);
-    // console.log('data', data);
-    console.log('----');
+  var addPartials = function(json, resources, data, added) {
 
     resolver = function(item, data) {
 
@@ -39,18 +33,21 @@ module.exports = function(grunt) {
           }(item.items));
         }
 
-        if (added[item.partial] !== true) {
+        requires = grunt.file.expand({
+          cwd: data.partials.cwd + item.partial
+        }, data.partials.match);
 
-          added[item.partial] = true;
+        _.each(requires, function(require) {
 
-          requires = grunt.file.expand({
-            cwd: data.partials.cwd + item.partial
-          }, data.partials.match);
+          resource = item.partial + '/' + require;
 
-          _.each(requires, function(require) {
-            resources.push(item.partial + '/' + require);
-          });
-        }
+          if (added[resource] !== true) {
+
+            added[resource] = true;
+
+            resources.push(resource);
+          }
+        });
       }
     };
 
@@ -89,9 +86,7 @@ module.exports = function(grunt) {
       if (pathname) {
         i += '/' + pathname;
       }
-      resources = resources.concat(data.resources[i]);
-
-      console.log('data.resources[i]', data.resources[i]);
+      resources = resources.concat(data.resources[i].array);
 
       // Get an array of matched files in the page root directory (E.g. 'js', 'scss')
       requires = grunt.file.expand({
@@ -104,7 +99,7 @@ module.exports = function(grunt) {
       });
 
       // Recursively add file paths from JSON to page resources array
-      addPartials(json, resources, data);
+      addPartials(json, resources, data, data.resources[i].added);
 
       // TODO: Remove dependency. This file was created by 'grunt webpackconfig'
       // Temp page JS file path
