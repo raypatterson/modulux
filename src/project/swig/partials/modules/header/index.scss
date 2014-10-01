@@ -1,9 +1,57 @@
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.element p {
+  @extend %vertical-align;
+}
+
 .header {
-  .menu-list {
-    margin: 0;
-    padding: 0;
+  height: 100px;
+
+  .header-logo {
+    height: inherit;
+
+    .header-logo-image {
+      width: 100%;
+      height: 100%;
+      background: url("/project/images/logo.png") no-repeat center center;
+      background-size: contain;
+    }
+
+    .header-logo-wrapper {
+      padding: 0 5%;
+      height: inherit;
+    }
   }
-  .menu-list-item {
-    float: left;
+
+  .header-title {
+    height: inherit;
+    text-align: center;
+    transform-style: preserve-3d;
+
+    h1 {
+      margin: 0;
+
+      @extend %vertical-align;
+    }
+  }
+
+  .header-menu {
+    height: inherit;
+    text-align: center;
+    transform-style: preserve-3d;
+
+    .header-menu-list {
+      display: inline-block;
+
+      @extend %vertical-align;
+
+      .header-menu-list-item {
+        float: left;
+      }
+    }
   }
 }

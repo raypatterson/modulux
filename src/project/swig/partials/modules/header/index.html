@@ -1,15 +1,23 @@
-{% extends 'src/project/swig/layouts/module.html' %}
+{% extends 'src/project/swig/layouts/_base.html' %}
 
-{% block classes %}header{% endblock %}
+{% block base %}
 
-{% block content %}
+<div class="header pure-g {{ classes }}">
 
-  <div>Logo</div>
+  <div class="header-logo pure-u-1-3">
+    <div class="header-logo-wrapper">
+      <div class="header-logo-image"></div>
+    </div>
+  </div>
   
-  <div class="title pure-u-1">
+  <div class="header-title pure-u-1-3">
     <h1>{{ title }}</h1>
   </div> 
   
-  {{ helpers.get_items_list(defaults.items, "menu") }}
+  <div class="header-menu pure-u-1-3">
+  {{ helpers.get_items_list(defaults.items, "header-menu") }}
+  </div> 
+  
+</div>
 
 {% endblock %}

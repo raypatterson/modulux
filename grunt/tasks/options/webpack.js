@@ -25,7 +25,7 @@ module.exports = {
         loader: 'style!css'
       }, {
         test: /\.scss$/,
-        loader: 'style!css!autoprefixer-loader!sass?outputStyle=expanded'
+        loader: 'style!css!autoprefixer-loader!sass?outputStyle=expanded&imagePath=src/images'
       }]
     },
   },
