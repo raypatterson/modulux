@@ -1,4 +1,5 @@
 var DefinePlugin = rekuire('node_modules/webpack/lib/DefinePlugin');
+var ProvidePlugin = rekuire('node_modules/webpack/lib/ProvidePlugin');
 var CommonsChunkPlugin = rekuire('node_modules/webpack/lib/optimize/CommonsChunkPlugin');
 var DedupePlugin = rekuire('node_modules/webpack/lib/optimize/DedupePlugin');
 var UglifyJsPlugin = rekuire('node_modules/webpack/lib/optimize/UglifyJsPlugin');
@@ -14,7 +15,11 @@ module.exports = {
       chunkFilename: '[chunkhash].[id].chunk.js'
     },
     plugins: [
-      new CommonsChunkPlugin('commons.js')
+      new CommonsChunkPlugin('commons.js'),
+      new ProvidePlugin({
+        $: 'jquery/dist/jquery.js',
+        jQuery: 'jquery/dist/jquery.js'
+      })
     ],
     module: {
       loaders: [{
@@ -25,7 +30,13 @@ module.exports = {
         loader: 'style!css'
       }, {
         test: /\.scss$/,
-        loader: 'style!css!autoprefixer-loader!sass?outputStyle=expanded&imagePath=src/images'
+        loader: 'style!css!autoprefixer!sass?outputStyle=expanded&imagePath=src/images'
+      }, {
+        test: /\.(eot|woff|ttf|svg)$/,
+        loader: 'url'
+      }, {
+        test: /.*\.(gif|png|jpg)$/,
+        loaders: ['image?optimizationLevel=7&interlaced=false']
       }]
     },
   },

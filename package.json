@@ -14,7 +14,9 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer-loader": "^1.0.0",
+    "checksum-loader": "0.0.1",
     "css-loader": "^0.9.0",
+    "file-loader": "^0.7.2",
     "fs-extra": "^0.9.1",
     "glob": "^4.0.6",
     "grunt": "^0.4.5",
@@ -26,7 +28,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-swig2": "https://github.com/RayPatterson/grunt-swig2/tarball/7b3ac7f96af3f990b219768583105eb66d079635",
     "grunt-webpack": "^1.0.8",
-    "jquery": "^2.1.1",
+    "image-webpack-loader": "0.0.7",
     "json-loader": "^0.5.1",
     "load-grunt-tasks": "^0.6.0",
     "lodash": "^2.4.1",
@@ -34,6 +36,7 @@
     "sass-loader": "^0.1.1",
     "style-loader": "^0.8.0",
     "time-grunt": "^1.0.0",
+    "url-loader": "^0.5.5",
     "webpack": "^1.4.4",
     "webpack-dev-server": "^1.6.5"
   }
