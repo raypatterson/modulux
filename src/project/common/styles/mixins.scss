@@ -1,0 +1,18 @@
+@mixin custom-gradient-background($color) {
+  background:
+  linear-gradient(
+    $color,
+    transparent
+  ),
+  linear-gradient(
+    -135deg,
+    lighten($color, 15%),
+    transparent
+  ),
+  linear-gradient(
+    135deg,
+    darken($color, 25%),
+    transparent
+  );
+  background-blend-mode: multiply;
+}

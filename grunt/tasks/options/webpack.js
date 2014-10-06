@@ -1,3 +1,5 @@
+var path = require('path');
+
 var DefinePlugin = rekuire('node_modules/webpack/lib/DefinePlugin');
 var ProvidePlugin = rekuire('node_modules/webpack/lib/ProvidePlugin');
 var CommonsChunkPlugin = rekuire('node_modules/webpack/lib/optimize/CommonsChunkPlugin');
@@ -30,7 +32,7 @@ module.exports = {
         loader: 'style!css'
       }, {
         test: /\.scss$/,
-        loader: 'style!css!autoprefixer!sass?outputStyle=expanded&imagePath=src/images'
+        loader: 'style!css!autoprefixer!sass?outputStyle=expanded&imagePath=<%= app_files.sass.image_path %>&includePaths[]=<%= app_files.sass.include_paths %>'
       }, {
         test: /\.(eot|woff|ttf|svg)$/,
         loader: 'url'

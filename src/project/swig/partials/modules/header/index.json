@@ -1,12 +1,15 @@
 {
   "items": [{
     "partial": "components/component-d",
-    "title": "Foo"
+    "title": "Home",
+    "href": "/"
   }, {
     "partial": "components/component-d",
-    "title": "Bar"
+    "title": "Page A",
+    "href": "/page-a/"
   }, {
     "partial": "components/component-d",
-    "title": "Baz"
+    "title": "Page B",
+    "href": "/page-b/"
   }]
 }

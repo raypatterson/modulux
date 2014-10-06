@@ -1,18 +1,5 @@
+@import "common/styles/mixins.scss";
+
 .template {
-  background:
-  linear-gradient(
-    #ccff66,
-    transparent
-  ),
-  linear-gradient(
-    -45deg,
-    #00ff80,
-    transparent
-  ),
-  linear-gradient(
-    45deg,
-    #66ffcc,
-    transparent
-  );
-  background-blend-mode: multiply;
+  @include custom-gradient-background(#ccff66);
 }

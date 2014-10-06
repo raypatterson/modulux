@@ -17,10 +17,10 @@
   {% endfor %}
 {% endmacro %}
 
-{% macro get_items_list(items, selector) %}
-  <ul class="{% if selector %}{{ selector }}-{% endif %}list">
+{% macro get_items_list(items, classes, prefix) %}
+  <ul class="{{ classes }}{% if prefix %} {{ prefix }}-{% endif %}list">
   {% for item in items %}
-    <li class="{% if selector %}{{ selector }}-{% endif %}list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
+    <li class="{% if prefix %}{{ prefix }}-{% endif %}list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
     {% set item.length = loop.length %}
     {% set item.idx = loop.index0 %}
     {{ get_item(item.partial, item) }}

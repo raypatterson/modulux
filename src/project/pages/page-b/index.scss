@@ -1,3 +1,5 @@
-body {
-  background: #ffff00;
+@import "common/styles/mixins.scss";
+
+.template {
+  @include custom-gradient-background(#ffcc66);
 }

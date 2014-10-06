@@ -67,6 +67,11 @@ module.exports = {
       ext: 'json'
     },
 
+    sass: {
+      image_path: '/project/images',
+      include_paths: __dirname + '/src/project/',
+    },
+
     webpack: {
       module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
       watch: ['./src/**/*.{js,json,scss}', '!./bower_components', '!./node_modules', '!./src/vendor/**/*.*'],

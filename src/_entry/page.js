@@ -1,7 +1,3 @@
-// Pure
-require('pure/pure.css');
-require('pure/grids-responsive.css');
-
 // Bootstrap
 require('bootstrap-sass-official/assets/stylesheets/_bootstrap.scss');
 require('bootstrap-sass-official/assets/javascripts/bootstrap.js');

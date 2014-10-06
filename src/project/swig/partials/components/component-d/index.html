@@ -1,6 +1,5 @@
-{% extends 'src/project/swig/layouts/component.html' %}
+{% extends 'src/project/swig/layouts/_base.html' %}
 
-{% block classes %}component-d{% endblock %}
-{% block content %}
-<button class="pure-button">{{ title }}</button>
+{% block base %}
+<a href="{{ href }}" class="component componenet-d">{{ title }}</a>
 {% endblock %}
