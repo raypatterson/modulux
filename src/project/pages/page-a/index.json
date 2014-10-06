@@ -11,10 +11,8 @@
   ],
   "items": [{
     "partial": "templates/template-a",
-    "header": {
-      "title": "Kickstarter Flannel"
-    },
-    "headline": "Shorts Crucifix",
+    "header": {},
+    "headline": "Page A",
     "items": [{
       "partial": "modules/module-a",
       "items": [{

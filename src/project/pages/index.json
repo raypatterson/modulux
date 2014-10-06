@@ -12,9 +12,9 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "X Kickstarter Flannel"
+			"title": "Welcome to our web site!"
 		},
-		"headline": "Shorts Crucifix",
+		"headline": "Home",
 		"items": [{
 			"partial": "modules/module-a",
 			"items": [{
