@@ -16,3 +16,9 @@
   );
   background-blend-mode: multiply;
 }
+
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -11,7 +11,17 @@
   ],
   "items": [{
     "partial": "templates/template-a",
-    "header": {},
+    "header": {
+      "items": [{
+        "partial": "components/nav-pills-item",
+        "title": "Home",
+        "href": "/"
+      }, {
+        "partial": "components/nav-pills-item",
+        "title": "Page A",
+        "href": "/page-a/"
+      }]
+    },
     "headline": "Page B",
     "items": [{
       "partial": "modules/module-a",

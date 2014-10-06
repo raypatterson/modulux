@@ -1,12 +1,5 @@
-%vertical-align {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .header {
   height: 100px;
-  // max-height: 6rem;
 
   .header-logo {
     height: 100%;
@@ -31,16 +24,9 @@
     .header-menu {
       height: 50%;
       text-align: right;
-      transform-style: preserve-3d;
 
-      .header-menu-list {
+      ul {
         display: inline-block;
-
-        @extend %vertical-align;
-
-        .header-menu-list-item {
-          float: left;
-        }
       }
     }
 

@@ -1,16 +1,24 @@
 {
   "title": "Your business is important to us!",
+  "partial": "components/nav-pills",
   "items": [{
-    "partial": "components/component-d",
+    "partial": "components/nav-pills-item",
     "title": "Home",
     "href": "/"
   }, {
-    "partial": "components/component-d",
+    "partial": "components/nav-pills-item",
     "title": "Page A",
     "href": "/page-a/"
   }, {
-    "partial": "components/component-d",
-    "title": "Page B",
-    "href": "/page-b/"
+    "partial": "components/nav-dropdown",
+    "items": [{
+      "partial": "components/nav-pills-item",
+      "title": "Page B",
+      "href": "/page-b/"
+    }, {
+      "partial": "components/nav-pills-item",
+      "title": "Page C",
+      "href": "/page-b/page-c/"
+    }]
   }]
 }

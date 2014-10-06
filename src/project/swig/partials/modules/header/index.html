@@ -12,16 +12,10 @@
   
   <div class="col-md-8 header-content">
     <div class="header-menu">
-      {{ helpers.get_items_list(defaults.items, "nav nav-pills",  "header-menu") }}
+      {{ helpers.get_item(partial) }}
     </div> 
     <div class="header-title">
-      <h1>
-      {% if title %}
-        {{ title }}
-      {% else %}
-        {{ defaults.title }}
-      {% endif %}
-      </h1>
+      <h1>{{ title }}</h1>
     </div>
   </div> 
   

@@ -1,0 +1,7 @@
+{% extends 'src/project/swig/layouts/_base.html' %}
+
+{% block base %}
+<ul class="nav nav-pills {{ classes }}">
+  {{ helpers.get_items(items) }}
+</ul>
+{% endblock %}

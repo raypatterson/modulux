@@ -11,7 +11,9 @@
   ],
   "items": [{
     "partial": "templates/template-a",
-    "header": {},
+    "header": {
+      "title": "Ask us about our special deals!"
+    },
     "headline": "Page A",
     "items": [{
       "partial": "modules/module-a",
