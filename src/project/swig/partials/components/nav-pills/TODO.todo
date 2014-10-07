@@ -1,0 +1,1 @@
++ Need to check for leaf nodes and empty nodes in overrides so that overrides don't need to declare partial paths to override, add classes, etc.

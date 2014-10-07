@@ -20,14 +20,11 @@
 
   .header-content {
     height: 100%;
+    text-align: right;
 
     .header-menu {
       height: 50%;
-      text-align: right;
-
-      ul {
-        display: inline-block;
-      }
+      display: inline-block;
     }
 
     .header-title {
