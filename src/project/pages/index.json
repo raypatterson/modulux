@@ -12,7 +12,7 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "Welcome to our web site!"
+			"title": "Welcome to our web site!!!"
 		},
 		"headline": "Home",
 		"items": [{
