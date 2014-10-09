@@ -2,6 +2,7 @@ var _ = require("lodash");
 var path = require("path");
 var swig = require("swig");
 var traverse = require("traverse");
+var loader = rekuire("grunt/lib/loaders/filesystem");
 
 var log = function(msg, ob) {
     console.log(msg, JSON.stringify(ob, null, 4));
@@ -51,9 +52,25 @@ module.exports = function(grunt) {
                 });
 
                 return defaults;
-            },
+            }
+        }
 
-            addResources: function(pathname, item, page) {
+        _.extend(options.swigOptions.locals, locals);
+
+        var page = null;
+
+        var addResources = function(file) {
+            if (file.indexOf(".swig") !== -1) {
+
+                // Loading new page
+
+                page = file.substring(options.config.basepath.length + 1, file.lastIndexOf("/"));
+
+            } else if (file.indexOf(options.config.partials.src) !== -1) {
+
+                // Loading page partials
+
+                file = file.substring(options.config.partials.src.length, file.lastIndexOf("/"));
 
                 var webpack = grunt.config(options.webpack);
 
@@ -63,13 +80,13 @@ module.exports = function(grunt) {
                 webpack.resources[page].array = webpack.resources[page].array || [];
 
                 var requires = grunt.file.expand({
-                    cwd: webpack.partials.cwd + pathname
+                    cwd: webpack.partials.cwd + file
                 }, webpack.partials.match);
 
                 var resource;
 
                 _.each(requires, function(require) {
-                    resource = pathname + '/' + require
+                    resource = file + '/' + require
                     if (webpack.resources[page].added[resource] !== true) {
                         webpack.resources[page].added[resource] = true;
                         webpack.resources[page].array.push(resource);
@@ -78,12 +95,11 @@ module.exports = function(grunt) {
 
                 grunt.config(options.webpack, webpack);
             }
+            // } else { Loading a layout or macro }
         }
 
-        _.extend(options.swigOptions.locals, locals);
-
         // Add defaults
-        options.swigOptions.loader = swig.loaders.fs(options.config.basepath);
+        options.swigOptions.loader = loader(options.config.basepath, 'utf8', addResources);
 
         // Create Swig instance
         var swigInstance = new swig.Swig(options.swigOptions);

@@ -4,8 +4,8 @@
  *
  */
 
-var _ = rekuire('lodash');
-var fs = rekuire('fs-extra');
+var _ = require('lodash');
+var fs = require('fs-extra');
 
 module.exports = function(grunt) {
 

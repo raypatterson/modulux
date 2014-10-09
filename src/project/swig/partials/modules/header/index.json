@@ -11,11 +11,9 @@
     "href": "/page-a/"
   }, {
     "partial": "components/nav-dropdown",
+    "title": "Page B",
+    "href": "/page-b/",
     "items": [{
-      "partial": "components/nav-pills-item",
-      "title": "Page B",
-      "href": "/page-b/"
-    }, {
       "partial": "components/nav-pills-item",
       "title": "Page C",
       "href": "/page-b/page-c/"
