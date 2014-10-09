@@ -12,7 +12,20 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "Welcome to our web site!!!"
+			"title": "Welcome to our web site!",
+			"items": [{}, {
+				"partial": "components/nav-pills-item",
+				"title": "Page A",
+				"href": "/page-a/"
+			}, {
+				"override": true,
+				"partial": "components/nav-dropdown",
+				"items": [{
+					"partial": "components/nav-pills-item",
+					"title": "Page B",
+					"href": "/page-b/"
+				}]
+			}]
 		},
 		"headline": "Home",
 		"items": [{

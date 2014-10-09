@@ -1,6 +1,5 @@
 /**
  * Build Swig templates
- * https://github.com/RayPatterson/grunt-swig2
  */
 
 module.exports = {
@@ -27,9 +26,6 @@ module.exports = {
     cwd: '<%= app_files.swig.pages.cwd %>',
     src: '<%= app_files.swig.pages.src %>',
     ext: '<%= app_files.swig.pages.ext %>',
-    rename: function(dest, src) {
-      return dest += '/' + src;
-    },
     expand: true
   },
   dist: {
@@ -37,9 +33,6 @@ module.exports = {
     cwd: '<%= app_files.swig.pages.cwd %>',
     src: '<%= app_files.swig.pages.src %>',
     ext: '<%= app_files.swig.pages.ext %>',
-    rename: function(dest, src) {
-      return dest += '/' + src;
-    },
     expand: true
   }
 };
