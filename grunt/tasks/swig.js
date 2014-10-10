@@ -2,8 +2,8 @@ var _ = require('lodash');
 var fs = require('fs-extra');
 var path = require('path');
 var globule = require('globule');
-var swig = require('swig');
 var traverse = require('traverse');
+var swig = require('swig');
 var loader = rekuire('grunt/lib/loaders/filesystem');
 
 var log = function(msg, ob) {

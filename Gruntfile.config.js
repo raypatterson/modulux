@@ -43,27 +43,17 @@ module.exports = {
 
     webpackrequire: {
       pages: {
-        cwd: './src/project/pages/',
+        cwd: 'src/project/pages/',
         match: ['*.{js,scss}'],
-        rename: function(dest, src) {
-          if (dest) {
-            src = dest + '/' + src;
-          }
-          return 'pages/' + src;
-        }
+        prefix: 'pages/',
       },
       partials: {
-        cwd: './src/project/swig/partials/',
+        cwd: 'src/project/swig/partials/',
         match: ['*.{js,scss}'],
-        rename: function(dest, src) {
-          if (dest) {
-            src = dest + '/' + src;
-          }
-          return 'partials/' + src;
-        }
+        prefix: 'partials/'
       },
-      match: ['./src/project/pages/**/*.json'],
-      cwd: './src/project/pages/',
+      match: ['src/project/pages/**/*.json'],
+      cwd: 'src/project/pages/',
       ext: 'json'
     },
 
