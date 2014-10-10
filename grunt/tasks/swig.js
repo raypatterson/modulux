@@ -1,17 +1,19 @@
-var _ = require("lodash");
-var path = require("path");
-var swig = require("swig");
-var traverse = require("traverse");
-var loader = rekuire("grunt/lib/loaders/filesystem");
+var _ = require('lodash');
+var fs = require('fs-extra');
+var path = require('path');
+var globule = require('globule');
+var swig = require('swig');
+var traverse = require('traverse');
+var loader = rekuire('grunt/lib/loaders/filesystem');
 
 var log = function(msg, ob) {
     console.log(msg, JSON.stringify(ob, null, 4));
 }
 
 module.exports = function(grunt) {
-    "use strict";
+    'use strict';
 
-    grunt.registerMultiTask("swig", "Render Swig templates to HTML", function() {
+    grunt.registerMultiTask('swig', 'Render Swig templates to HTML', function() {
         var options = this.options({
             data: {},
             tags: {},
@@ -33,8 +35,8 @@ module.exports = function(grunt) {
 
                 var cfg = options.config.partials;
                 var src = cfg.src + slug + cfg.datapath;
-                var hasDefaults = grunt.file.exists(src);
-                var defaults = hasDefaults ? grunt.file.readJSON(src) : {};
+                var hasDefaults = fs.existsSync(src);
+                var defaults = fs.existsSync(src) ? fs.readJSONSync(src) : {};
                 var traverseDefaults = traverse(defaults);
                 var itemDefaults = traverse(item);
 
@@ -60,17 +62,17 @@ module.exports = function(grunt) {
         var page = null;
 
         var addResources = function(file) {
-            if (file.indexOf(".swig") !== -1) {
+            if (file.indexOf('.swig') !== -1) {
 
                 // Loading new page
 
-                page = file.substring(options.config.basepath.length + 1, file.lastIndexOf("/"));
+                page = file.substring(options.config.basepath.length + 1, file.lastIndexOf('/'));
 
             } else if (file.indexOf(options.config.partials.src) !== -1) {
 
                 // Loading page partials
 
-                file = file.substring(options.config.partials.src.length, file.lastIndexOf("/"));
+                file = file.substring(options.config.partials.src.length, file.lastIndexOf('/'));
 
                 var webpack = grunt.config(options.webpack);
 
@@ -79,9 +81,9 @@ module.exports = function(grunt) {
                 webpack.resources[page].added = webpack.resources[page].added || {};
                 webpack.resources[page].array = webpack.resources[page].array || [];
 
-                var requires = grunt.file.expand({
+                var requires = globule.find(webpack.partials.match, {
                     cwd: webpack.partials.cwd + file
-                }, webpack.partials.match);
+                });
 
                 var resource;
 
@@ -118,54 +120,32 @@ module.exports = function(grunt) {
             }
         });
 
-        var data = options.data;
-
-        // If we have dynamic locals, let's do this
-        if (typeof data === "function") {
-            data = data();
-            data = grunt.config.process(data);
-        }
-
-        var renderData;
+        var data;
         var contents
         var jsonPath;
-
-        var addPage = function(items, page) {
-            if (items) {
-                _.each(items, function(item) {
-                    item.page = page;
-                    addPage(item.items, page);
-                });
-            }
-        };
 
         // Iterate thru sources and create them
         this.files.forEach(function(file) {
 
-            contents = "";
+            contents = '';
 
             file.src.forEach(function(src) {
 
-                jsonPath = path.resolve(src).replace("swig", "json");
+                jsonPath = path.resolve(src).replace('swig', 'json');
 
-                if (grunt.file.exists(jsonPath)) {
+                if (fs.existsSync(jsonPath)) {
 
-                    renderData = _.clone(data);
+                    data = _.clone(options.data);
 
-                    _.extend(renderData, grunt.file.readJSON(jsonPath));
-
-                    addPage(renderData.items, src.substring(0, src.lastIndexOf("/")));
+                    _.extend(data, fs.readJSONSync(jsonPath));
                 }
 
-                contents += swigInstance.renderFile(src, renderData);
+                contents += swigInstance.renderFile(src, data);
             });
 
-            grunt.file.write(file.dest, contents, {
-                // swig only reads in utf8.
-                // if this ever change in swig, we'll need to do it here as well
-                encoding: "utf8"
-            });
-            grunt.log.writeln("File " + file.dest.cyan + " created.");
+            fs.outputFileSync(file.dest, contents);
+
+            console.log('File ' + file.dest.cyan + ' created.');
         });
     });
 };

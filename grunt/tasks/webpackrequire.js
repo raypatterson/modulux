@@ -1,5 +1,7 @@
 var _ = require('lodash');
+var fs = require('fs-extra');
 var path = require('path');
+var globule = require('globule');
 
 module.exports = function(grunt) {
 
@@ -33,9 +35,9 @@ module.exports = function(grunt) {
           }(item.items));
         }
 
-        requires = grunt.file.expand({
+        requires = globule.find(data.partials.match, {
           cwd: data.partials.cwd + item.partial
-        }, data.partials.match);
+        });
 
         _.each(requires, function(require) {
 
@@ -58,7 +60,7 @@ module.exports = function(grunt) {
 
   addResources = function(data) {
 
-    filelist = grunt.file.expand(data.match);
+    filelist = globule.find(data.match);
 
     // console.log('addResources:', filelist);
 
@@ -89,9 +91,10 @@ module.exports = function(grunt) {
       resources = resources.concat(data.resources[i].array);
 
       // Get an array of matched files in the page root directory (E.g. 'js', 'scss')
-      requires = grunt.file.expand({
+
+      requires = globule.find(data.pages.match, {
         cwd: data.pages.cwd + pathname
-      }, data.pages.match);
+      });
 
       // Add page file paths to page resources array 
       _.each(requires, function(require) {
@@ -105,17 +108,19 @@ module.exports = function(grunt) {
       // Temp page JS file path
       filename = temp_dir + key + '.js';
 
-      template = grunt.file.read(filename);
+      template = fs.readFileSync(filename, {
+        encoding: 'utf-8'
+      });
 
       // Process template 
-      contents = grunt.template.process(template, {
-        data: {
-          items: resources
-        }
+      contents = _.template(template, {
+        items: resources
       });
 
       // Write file
-      grunt.file.write(filename, contents);
+      fs.outputFileSync(filename, contents);
+
+      console.log('File ' + filename.cyan + ' created.');
 
     });
   };

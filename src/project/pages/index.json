@@ -20,6 +20,8 @@
 			}, {
 				"override": true,
 				"partial": "components/nav-dropdown",
+				"title": "Page C",
+				"href": "/page-b/page-c/",
 				"items": [{
 					"partial": "components/nav-pills-item",
 					"title": "Page B",
