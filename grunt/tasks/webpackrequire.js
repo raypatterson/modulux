@@ -13,9 +13,7 @@ module.exports = function(grunt) {
   var json;
   var resolver;
   var template;
-  var contents;
   var requires;
-  var includes;
   var pageName;
   var pageRoot;
   var fileName;
@@ -24,23 +22,22 @@ module.exports = function(grunt) {
   var addEntryPoints = function(data) {
 
     var keys = [];
+    var entry = {};
 
     _.map(globule.find(data.entry.match), function(val, key) {
       keys.push(val.substring(data.entry.cwd.length, val.lastIndexOf('.')));
     });
 
-    var entry = {};
-    var filename;
     var templates = grunt.file.expand(data.entry.templates);
 
     _.each(keys, function(key) {
 
-      filename = temp_dir + key + '.js';
+      fileName = temp_dir + key + '.js';
 
-      entry[key] = filename;
+      entry[key] = fileName;
 
       _.each(templates, function(file) {
-        fs.copySync(file, filename);
+        fs.copySync(file, fileName);
       });
     });
 
@@ -143,13 +140,10 @@ module.exports = function(grunt) {
         encoding: 'utf-8'
       });
 
-      // Process template 
-      contents = _.template(template, {
+      // Process template and write file
+      fs.outputFileSync(fileName, _.template(template, {
         items: resources
-      });
-
-      // Write file
-      fs.outputFileSync(fileName, contents);
+      }));
 
       console.log('File ' + fileName.cyan + ' created.');
 
