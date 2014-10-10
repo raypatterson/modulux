@@ -7,7 +7,6 @@ var traverse = require('traverse');
 module.exports = function(grunt) {
 
   var temp_dir = grunt.config('temp_dir');
-  var arr;
   var resources = [];
   var resource;
   var added;

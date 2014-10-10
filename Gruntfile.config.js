@@ -49,8 +49,7 @@ module.exports = {
       },
       partials: {
         cwd: 'src/project/swig/partials/',
-        match: ['*.{js,scss}'],
-        prefix: 'partials/'
+        match: ['*.{js,scss}']
       },
       match: ['src/project/pages/**/*.json'],
       cwd: 'src/project/pages/',

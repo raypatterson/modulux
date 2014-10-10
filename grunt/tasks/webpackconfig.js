@@ -6,6 +6,7 @@
 
 var _ = require('lodash');
 var fs = require('fs-extra');
+var globule = require('globule');
 
 module.exports = function(grunt) {
 
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
     var temp_dir = grunt.config('temp_dir');
     fs.removeSync(temp_dir);
 
-    var arr = grunt.file.expand(data.match);
+    var arr = globule.find(data.match);
     var keys = [];
 
     _.map(arr, function(val, key) {
@@ -38,7 +39,7 @@ module.exports = function(grunt) {
 
       _.each(files, function(file) {
 
-        grunt.file.copy(file, filename);
+        fs.copySync(file, filename);
 
       });
     });
