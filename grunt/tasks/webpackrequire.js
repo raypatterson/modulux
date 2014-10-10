@@ -23,17 +23,10 @@ module.exports = function(grunt) {
   // Finds, creates and assigns entry points 
   var addEntryPoints = function(data) {
 
-    var temp_dir = grunt.config('temp_dir');
-    fs.removeSync(temp_dir);
-
-    var arr = globule.find(data.entry.match);
     var keys = [];
 
-    _.map(arr, function(val, key) {
-
-      key = val.substring(val.lastIndexOf(data.entry.cwd) + data.entry.cwd.length, val.lastIndexOf(data.entry.ext) - 1).replace('data', 'scripts');
-      keys.push(key);
-
+    _.map(globule.find(data.entry.match), function(val, key) {
+      keys.push(val.substring(data.entry.cwd.length, val.lastIndexOf('.')));
     });
 
     var entry = {};
@@ -47,9 +40,7 @@ module.exports = function(grunt) {
       entry[key] = filename;
 
       _.each(templates, function(file) {
-
         fs.copySync(file, filename);
-
       });
     });
 
@@ -167,6 +158,10 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('webpackrequire', 'Webpack Require', function() {
 
+    // Remove old
+    fs.removeSync(temp_dir);
+
+    // Add new
     addEntryPoints(this.data, grunt);
     addResources(this.data);
 

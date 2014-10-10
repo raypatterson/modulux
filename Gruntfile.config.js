@@ -2,7 +2,7 @@ module.exports = {
 
   root_dir: __dirname,
   source_dir: 'src',
-  build_dir: '.tmp',
+  build_dir: 'build',
   compile_dir: 'dist',
   bower_dir: 'bower_components',
   node_dir: 'node_modules',
