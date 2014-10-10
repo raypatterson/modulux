@@ -91,7 +91,7 @@ module.exports = function(grunt) {
                     resource = file + '/' + require
                     if (webpack.resources[page].added[resource] !== true) {
                         webpack.resources[page].added[resource] = true;
-                        webpack.resources[page].array.push(resource);
+                        webpack.resources[page].array.unshift(resource);
                     }
                 });
 
