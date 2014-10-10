@@ -35,13 +35,21 @@ module.exports = {
     },
 
     webpackconfig: {
-      watch: ['./src/_entry/*.js'],
-      match: ['./src/project/pages/**/*.json'],
-      cwd: './src/project/pages/',
-      ext: 'json'
+      entry: {
+        templates: ['./src/_entry/*.js'],
+        match: ['./src/project/pages/**/*.json'],
+        cwd: './src/project/pages/',
+        ext: 'json'
+      }
     },
 
     webpackrequire: {
+      entry: {
+        templates: ['./src/_entry/*.js'],
+        match: ['./src/project/pages/**/*.json'],
+        cwd: './src/project/pages/',
+        ext: 'json'
+      },
       pages: {
         cwd: 'src/project/pages/',
         match: ['*.{js,scss}'],

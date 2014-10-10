@@ -4,7 +4,6 @@ module.exports = function(grunt) {
     'clean',
     'copy:dev',
     'swig:dev',
-    'webpackconfig',
     'webpackrequire',
     'webpack:dev',
     'jshint'

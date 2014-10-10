@@ -5,7 +5,6 @@ module.exports = function(grunt) {
         'copy:dist',
         'swig:dist',
         'htmlmin:dist',
-        'webpackconfig',
         'webpackrequire',
         'webpack:dist',
         'jshint'
