@@ -1,0 +1,7 @@
+{% extends 'src/project/swig/layouts/_base.html' %}
+
+{% block base %}
+
+<img class="img{% if type %}-{{ type }}{% endif %} {{ classes }}" src="{{ src }}" alt="{{ alt }}" />
+
+{% endblock %}

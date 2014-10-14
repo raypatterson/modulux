@@ -64,6 +64,23 @@
 					}]
 				}]
 			}]
+		}, {
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "layouts/col",
+				"items": [{
+					"partial": "modules/profile",
+					"image": {
+						"type": "circle",
+						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg",
+						"alt": "Jackie Chan"
+					},
+					"button": {
+						"type": "success",
+						"title": "Hey there!"
+					}
+				}]
+			}]
 		}]
 	}]
 }
