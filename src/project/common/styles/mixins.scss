@@ -5,12 +5,12 @@
     transparent
   ),
   linear-gradient(
-    -135deg,
+    -45deg,
     lighten($color, 15%),
     transparent
   ),
   linear-gradient(
-    135deg,
+    45deg,
     darken($color, 25%),
     transparent
   );

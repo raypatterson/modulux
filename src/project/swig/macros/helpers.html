@@ -16,12 +16,32 @@
   {% endfor %}
 {% endmacro %}
 
+{% macro get_items_rows(items, classes, prefix) %}
+  {% for item in items %}
+    {% set item.length = loop.length %}
+    {% set item.idx = loop.index0 %}
+    <div class="row {% if prefix %}{{ prefix }}-{% endif %}row-item {% if loop.index0 % 2 == 0 %}even {% else %}odd {% endif %}{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %} {{ classes }}">
+    {{ get_item(item.partial, item) }}
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro get_items_cols(items, classes, prefix) %}
+  {% for item in items %}
+    {% set item.idx = loop.index0 %}
+    {% set item.length = loop.length %}
+    <div class="col-md-{{ 12 / loop.length }} {% if prefix %}{{ prefix }}-{% endif %}col-item {% if loop.index0 % 2 == 0 %}even {% else %}odd {% endif %}{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %} {{ classes }}">
+    {{ get_item(item.partial, item) }}
+    </div>
+  {% endfor %}
+{% endmacro %}
+
 {% macro get_items_list(items, classes, prefix) %}
   <ul class="{{ classes }}{% if prefix %} {{ prefix }}-{% endif %}list">
   {% for item in items %}
-    <li class="{% if prefix %}{{ prefix }}-{% endif %}list-item {% if loop.index0 % 2 == 0 %}even{% else %}odd {% endif %} {% if loop.first %}first{% endif %}{% if loop.last %}last{% endif %}">
     {% set item.length = loop.length %}
     {% set item.idx = loop.index0 %}
+    <li class="{% if prefix %}{{ prefix }}-{% endif %}list-item {% if loop.index0 % 2 == 0 %}even {% else %}odd {% endif %}{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %}">
     {{ get_item(item.partial, item) }}
     </li>
   {% endfor %}

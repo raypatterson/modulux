@@ -7,15 +7,8 @@
   {% block header %}
   {% endblock %}
 
-  {% block headline %}
-  {% endblock %}
-
   {% if items %}
-  <div class="row items">
-    {% block items %}
-      {{ helpers.get_items(items) }}
-    {% endblock %}
-  </div>
+    {{ helpers.get_items(items) }}
   {% endif %}
 
   {% block footer %}

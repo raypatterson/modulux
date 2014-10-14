@@ -66,7 +66,7 @@ module.exports = {
 
     sass: {
       image_path: '/project/images',
-      include_paths: __dirname + '/src/project/',
+      include_paths: __dirname + '/src/project/' + ', bower_components/'
     },
 
     webpack: {
