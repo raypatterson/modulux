@@ -34,8 +34,10 @@
 			"items": [{
 				"partial": "layouts/col",
 				"items": [{
-					"partial": "modules/headline",
-					"title": "Homie"
+					"partial": "components/ui-text",
+					"text": "Homie",
+					"tag": "h1",
+					"classes": "h2"
 				}]
 			}]
 		}, {
@@ -70,14 +72,48 @@
 				"partial": "layouts/col",
 				"items": [{
 					"partial": "modules/profile",
+					"title": {
+						"text": "Delivery",
+						"tag": "h2"
+					},
+					"description": {
+						"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+					},
 					"image": {
-						"type": "circle",
-						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg",
-						"alt": "Jackie Chan"
+						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
 					},
 					"button": {
-						"type": "success",
-						"title": "Hey there!"
+						"type": "info"
+					}
+				}, {
+					"partial": "modules/profile",
+					"title": {
+						"text": "Efficiency",
+						"tag": "h2"
+					},
+					"description": {
+						"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
+					},
+					"image": {
+						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+					},
+					"button": {
+						"type": "success"
+					}
+				}, {
+					"partial": "modules/profile",
+					"title": {
+						"text": "Synergy",
+						"tag": "h2"
+					},
+					"description": {
+						"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+					},
+					"image": {
+						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+					},
+					"button": {
+						"type": "danger"
 					}
 				}]
 			}]

@@ -1,0 +1,10 @@
+{
+  "image": {
+    "type": "circle",
+    "classes": "center-block"
+  },
+  "button": {
+    "type": "info",
+    "title": "Learn More"
+  }
+}
