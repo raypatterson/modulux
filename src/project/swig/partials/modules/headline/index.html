@@ -2,6 +2,6 @@
 
 {% block base %}
 
-<{{ tag }} class="{{ classes }}">{{ text|safe }}</{{ tag }}>
+{{ helpers.get_item('components/ui-text', headline) }}
 
 {% endblock %}

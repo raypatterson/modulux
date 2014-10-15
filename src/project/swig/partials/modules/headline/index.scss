@@ -1,0 +1,6 @@
+@import "common/styles/mixins.scss";
+
+.headline {
+
+  @extend %text-emboss;
+}

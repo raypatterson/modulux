@@ -12,7 +12,6 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "Welcome to our web site!",
 			"items": [{}, {
 				"partial": "components/nav-pills-item",
 				"title": "Page A",
@@ -34,10 +33,8 @@
 			"items": [{
 				"partial": "layouts/col",
 				"items": [{
-					"partial": "components/ui-text",
-					"text": "Homie",
-					"tag": "h1",
-					"classes": "h2"
+					"partial": "modules/headline",
+					"text": "Objectively innovate empowered manufactured products"
 				}]
 			}]
 		}, {
