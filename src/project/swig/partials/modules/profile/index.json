@@ -1,4 +1,8 @@
 {
+  "title": {
+    "tag": "h3",
+    "classes": "h2"
+  },
   "image": {
     "type": "circle",
     "classes": "center-block"

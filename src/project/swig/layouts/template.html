@@ -8,7 +8,9 @@
   {% endblock %}
 
   {% if items %}
-    {{ helpers.get_items(items) }}
+    <main>
+    {{ helpers.get_items_rows(items) }}
+    </main>
   {% endif %}
 
   {% block footer %}

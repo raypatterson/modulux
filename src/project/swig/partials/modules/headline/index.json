@@ -1,5 +1,5 @@
 {
   "text": "default headline text",
-  "tag": "h1",
-  "classes": "headline text-capitalize"
+  "tag": "h2",
+  "classes": "headline text-center text-capitalize"
 }

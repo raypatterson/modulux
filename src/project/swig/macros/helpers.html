@@ -1,9 +1,12 @@
 {% macro get_item(slug, item) %}
   {% set partialpath = getPartialPath(slug, item) %}
-  {% if not item  %}
+  {% if not item %}
     {% include partialpath %}
   {% else %}
     {% set item = setDefaultsData(slug, item) %}
+    {% if item.mixin.classes %}
+      {% set item.classes += item.mixin.classes %}
+    {% endif %}
     {% include partialpath with item only %}
   {% endif %}
 {% endmacro %}
@@ -18,21 +21,35 @@
 
 {% macro get_items_rows(items, classes, prefix) %}
   {% for item in items %}
-    {% set item.length = loop.length %}
-    {% set item.idx = loop.index0 %}
-    <div class="row {% if prefix %}{{ prefix }}-{% endif %}row-item {% if loop.index0 % 2 == 0 %}even {% else %}odd {% endif %}{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %} {{ classes }}">
-    {{ get_item(item.partial, item) }}
-    </div>
-  {% endfor %}
-{% endmacro %}
 
-{% macro get_items_cols(items, classes, prefix) %}
-  {% for item in items %}
-    {% set item.idx = loop.index0 %}
     {% set item.length = loop.length %}
-    <div class="col-md-{{ 12 / loop.length }} {% if prefix %}{{ prefix }}-{% endif %}col-item {% if loop.index0 % 2 == 0 %}even {% else %}odd {% endif %}{% if loop.first %}first {% endif %}{% if loop.last %}last {% endif %} {{ classes }}">
+    {% set item.index = loop.index0 %}
+
+    <section class="row{% if loop.index0 % 2 == 0 %} even{% else %} odd{% endif %}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %} {{ classes }}">
+    {% for i in item.items %}
+      {% set i.mixin = {} %}
+      {% set i.mixin.classes = "" %}
+      {% set i.mixin.classes += " num-" %}
+      {% set i.mixin.classes += loop.index %}
+      {% set i.mixin.classes += " of-" %}
+      {% set i.mixin.classes += loop.length %}
+      {% set i.mixin.classes += " col-md-" %}
+      {% set i.mixin.classes += 12 / loop.length %}
+      {% if loop.index0 % 2 == 0 %} 
+        {% set i.mixin.classes += " odd" %}
+      {% else %} 
+        {% set i.mixin.classes += " even" %}
+      {% endif %}
+      {% if loop.first %} 
+        {% set i.mixin.classes += " first" %}
+      {% endif %}
+      {% if loop.last && loop.length != 1 %} 
+        {% set i.mixin.classes += " last" %}
+      {% endif %}
+    {% endfor %}
     {{ get_item(item.partial, item) }}
-    </div>
+    </section>
+
   {% endfor %}
 {% endmacro %}
 

@@ -2,13 +2,13 @@
 
 {% block base %}
 
-<div class="profile">
+<article class="profile {{ classes }}">
   
 {{ helpers.get_item('components/ui-text', title) }}
 {{ helpers.get_item('components/ui-text', description) }}
 {{ helpers.get_item('components/ui-image', image) }}
 {{ helpers.get_item('components/ui-button', button) }}
 
-</div>
+</article>
 
 {% endblock %}

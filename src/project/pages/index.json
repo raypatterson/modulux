@@ -19,94 +19,88 @@
 			}, {
 				"override": true,
 				"partial": "components/nav-dropdown",
-				"title": "Page C",
-				"href": "/page-b/page-c/",
+				"title": "Page B",
+				"href": "/page-b/",
 				"items": [{
 					"partial": "components/nav-pills-item",
-					"title": "Page B",
-					"href": "/page-b/"
+					"title": "Page C",
+					"href": "/page-b/page-c/"
 				}]
 			}]
 		},
 		"items": [{
 			"partial": "layouts/row",
 			"items": [{
-				"partial": "layouts/col",
+				"partial": "modules/headline",
+				"text": "Objectively innovate empowered manufactured products"
+			}]
+		}, {
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "modules/carousel",
+				"module_id": "top-level-carousel",
 				"items": [{
-					"partial": "modules/headline",
-					"text": "Objectively innovate empowered manufactured products"
-				}]
-			}, {
-				"partial": "layouts/col",
-				"items": [{
-					"partial": "modules/carousel",
-					"module_id": "top-level-carousel",
-					"items": [{
-						"image": {
-							"src": "http://p-hold.com/earth/1600/800/grey"
-						}
-					}, {
-						"image": {
-							"src": "http://p-hold.com/wind/1600/800/grey"
-						}
-					}, {
-						"image": {
-							"src": "http://p-hold.com/fire/1600/800/grey"
-						}
-					}, {
-						"image": {
-							"src": "http://p-hold.com/water/1600/800/grey"
-						}
-					}]
-				}]
-			}, {
-				"partial": "layouts/col",
-				"items": [{
-					"partial": "modules/profile",
-					"title": {
-						"text": "Synergy",
-						"tag": "h2"
-					},
-					"description": {
-						"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
-					},
 					"image": {
-						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
-					},
-					"button": {
-						"type": "danger"
+						"src": "http://p-hold.com/earth/1600/800/grey"
 					}
 				}, {
-					"partial": "modules/profile",
-					"title": {
-						"text": "Efficiency",
-						"tag": "h2"
-					},
-					"description": {
-						"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
-					},
 					"image": {
-						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
-					},
-					"button": {
-						"type": "success"
+						"src": "http://p-hold.com/wind/1600/800/grey"
 					}
 				}, {
-					"partial": "modules/profile",
-					"title": {
-						"text": "Delivery",
-						"tag": "h2"
-					},
-					"description": {
-						"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
-					},
 					"image": {
-						"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
-					},
-					"button": {
-						"type": "info"
+						"src": "http://p-hold.com/fire/1600/800/grey"
+					}
+				}, {
+					"image": {
+						"src": "http://p-hold.com/water/1600/800/grey"
 					}
 				}]
+			}]
+		}, {
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "modules/profile",
+				"title": {
+					"text": "Synergy"
+				},
+				"description": {
+					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+				},
+				"image": {
+					"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+				},
+				"button": {
+					"type": "danger"
+				}
+			}, {
+				"partial": "modules/profile",
+				"title": {
+					"text": "Efficiency"
+				},
+				"description": {
+					"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
+				},
+				"image": {
+					"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+				},
+				"button": {
+					"type": "success"
+				}
+			}, {
+				"partial": "modules/profile",
+				"title": {
+					"text": "Delivery"
+				},
+				"description": {
+					"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+				},
+				"image": {
+					"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+				},
+				"button": {
+					"type": "info"
+				}
 			}]
 		}]
 	}]
