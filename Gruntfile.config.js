@@ -21,7 +21,7 @@ module.exports = {
 
     swig: {
       watch: ['./src/project/**/*.{swig,json}', './src/project/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
-      basepath: __dirname,
+      basepath: __dirname + '',
       pages: {
         cwd: 'src/project/pages/',
         src: ['**/*.swig'],

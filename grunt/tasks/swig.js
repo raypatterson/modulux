@@ -68,6 +68,9 @@ module.exports = function(grunt) {
 
                 page = file.substring(options.config.basepath.length + 1, file.lastIndexOf('/'));
 
+                console.log('file:', file);
+                console.log('page:', page);
+
             } else if (file.indexOf(options.config.partials.src) !== -1) {
 
                 // Loading page partials
@@ -140,8 +143,10 @@ module.exports = function(grunt) {
                     _.extend(data, fs.readJSONSync(jsonPath));
                 }
 
+                console.log('src:', src);
                 contents += swigInstance.renderFile(src, data);
             });
+
 
             fs.outputFileSync(file.dest, contents);
 

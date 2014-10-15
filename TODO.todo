@@ -5,3 +5,5 @@
      Allows modular code organization
      Module level content defaults
      Page level content overrides 
+
+ ☐ Remove source directory from Swig file paths
