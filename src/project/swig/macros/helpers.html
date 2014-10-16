@@ -4,6 +4,9 @@
     {% include partialpath %}
   {% else %}
     {% set item = setDefaultsData(slug, item) %}
+    {% if not item.classes %}
+      {% set item.classes = "" %}
+    {% endif %}
     {% if item.mixin.classes %}
       {% set item.classes += item.mixin.classes %}
     {% endif %}

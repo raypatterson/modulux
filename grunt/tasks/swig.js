@@ -62,14 +62,12 @@ module.exports = function(grunt) {
         var page = null;
 
         var addResources = function(file) {
+
             if (file.indexOf('.swig') !== -1) {
 
                 // Loading new page
 
                 page = file.substring(options.config.basepath.length + 1, file.lastIndexOf('/'));
-
-                console.log('file:', file);
-                console.log('page:', page);
 
             } else if (file.indexOf(options.config.partials.src) !== -1) {
 
@@ -143,7 +141,6 @@ module.exports = function(grunt) {
                     _.extend(data, fs.readJSONSync(jsonPath));
                 }
 
-                console.log('src:', src);
                 contents += swigInstance.renderFile(src, data);
             });
 

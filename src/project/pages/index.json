@@ -40,20 +40,24 @@
 				"partial": "modules/carousel",
 				"module_id": "top-level-carousel",
 				"items": [{
+					"title": "Business",
 					"image": {
-						"src": "http://p-hold.com/earth/1600/800/grey"
+						"src": "images/carousel-business.jpg"
 					}
 				}, {
+					"title": "Money",
 					"image": {
-						"src": "http://p-hold.com/wind/1600/800/grey"
+						"src": "images/carousel-money.jpg"
 					}
 				}, {
+					"title": "Numbers",
 					"image": {
-						"src": "http://p-hold.com/fire/1600/800/grey"
+						"src": "images/carousel-numbers.jpg"
 					}
 				}, {
+					"title": "People",
 					"image": {
-						"src": "http://p-hold.com/water/1600/800/grey"
+						"src": "images/carousel-people.jpg"
 					}
 				}]
 			}]
@@ -68,7 +72,7 @@
 					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
 				},
 				"image": {
-					"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+					"src": "images/profile-synergy.jpg"
 				},
 				"button": {
 					"type": "danger"
@@ -82,7 +86,7 @@
 					"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
 				},
 				"image": {
-					"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+					"src": "images/profile-efficiency.jpg"
 				},
 				"button": {
 					"type": "success"
@@ -96,7 +100,7 @@
 					"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
 				},
 				"image": {
-					"src": "http://content7.flixster.com/rtactor/40/34/40341_pro.jpg"
+					"src": "images/profile-delivery.jpg"
 				},
 				"button": {
 					"type": "info"

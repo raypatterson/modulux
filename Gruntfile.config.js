@@ -15,8 +15,8 @@ module.exports = {
     assets_src: ['./{,*/}fonts/{,*/}*', './{,*/}images/{,*/}*'],
 
     copy: {
-      cwd: './src/',
-      src: ['**/*.{jpg,png,gif}']
+      cwd: './src/project/',
+      src: ['**/*.{jpg,png,gif,svg}']
     },
 
     swig: {
@@ -65,7 +65,7 @@ module.exports = {
     },
 
     sass: {
-      image_path: '/project/images',
+      image_path: '/images',
       include_paths: __dirname + '/src/project/' + ', bower_components/'
     },
 
