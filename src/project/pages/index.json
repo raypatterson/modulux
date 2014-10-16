@@ -4,18 +4,18 @@
 	"includes": [
 		"vendor-a/scripts",
 		"vendor-b/scripts",
+		"scripts/library-a",
 		"scripts/library-b",
-		"scripts/library-c",
 		"common/scripts/common-a",
-		"common/scripts/common-c"
+		"common/scripts/common-b"
 	],
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
 			"items": [{}, {
 				"partial": "components/nav-pills-item",
-				"title": "Page A",
-				"href": "/page-a/"
+				"title": "Pricing",
+				"href": "/pricing/"
 			}, {
 				"override": true,
 				"partial": "components/nav-dropdown",
@@ -29,12 +29,6 @@
 			}]
 		},
 		"items": [{
-			"partial": "layouts/row",
-			"items": [{
-				"partial": "modules/headline",
-				"text": "empowered manufacturing objectively innovating"
-			}]
-		}, {
 			"partial": "layouts/row",
 			"items": [{
 				"partial": "modules/carousel",
