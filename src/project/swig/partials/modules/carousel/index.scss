@@ -3,6 +3,7 @@
 .carousel {
   
   padding: 0;
+  overflow: hidden;
 
   .item {
 
@@ -29,7 +30,6 @@
   .glyphicon-chevron-left,
   .glyphicon-chevron-right {
     top: 90%;
-
   }
 
   img {

@@ -2,10 +2,11 @@
 
 .headline {
 
+  // color: white;
+  // opacity: 0.75;
+
   span {
-    color: #222529;
-    @extend %text-emboss;
+    padding-bottom: 3%;
   }
 
-  padding-bottom: 1%;
 }
