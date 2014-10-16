@@ -2,5 +2,10 @@
 
 .headline {
 
+  span {
+    color: #222529;
+    @extend %text-emboss;
+  }
+
   padding-bottom: 1%;
 }
