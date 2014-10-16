@@ -32,7 +32,7 @@
 			"partial": "layouts/row",
 			"items": [{
 				"partial": "modules/headline",
-				"text": "Objectively innovate empowered manufactured products"
+				"text": "empowered manufacturing objectively innovating"
 			}]
 		}, {
 			"partial": "layouts/row",

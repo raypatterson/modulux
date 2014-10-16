@@ -1,4 +1,29 @@
 .profile {
   
   text-align: center;
+
+  .title {
+    font-size: 6vw;
+  }
+
+  .profile-container {
+    background: rgba(0, 0, 0, 0.05);
+    padding-top: 30px;
+  }
+
+  &.first {
+    .profile-container {
+      // margin-left: $profile-padding;
+    }
+  }
+
+  &.last {
+    .profile-container {
+      // margin-right: $profile-padding;
+    }
+  }
+
+  img {
+    width: 90%;
+  }
 }
