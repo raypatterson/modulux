@@ -1,0 +1,27 @@
+.footer {
+
+  background: rgba(0, 0, 0, 0.25);
+  padding: 5rem;
+
+  nav {
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      float: left;
+      padding: 1rem;
+      border-right: 1px solid #3b59b7;
+    }
+
+    li.last {
+      border-right: none;
+    }
+  }
+
+  .copyright {
+    padding: 1rem;
+    text-align: right;
+  }
+}
