@@ -1,1 +1,1 @@
-module.exports = console.log('Init Vendor A');
+require('utils/hello.js')('Init Vendor A');

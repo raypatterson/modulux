@@ -1,1 +1,1 @@
-module.exports = console.log('Init Page Pricing');
+require('utils/hello.js')('Init Page Pricing', '.pricing');

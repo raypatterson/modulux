@@ -121,9 +121,10 @@ module.exports = function(grunt) {
             }
         });
 
+        var pagePath;
+        var jsonPath;
         var data;
         var contents
-        var jsonPath;
 
         // Iterate thru sources and create them
         this.files.forEach(function(file) {
@@ -140,6 +141,13 @@ module.exports = function(grunt) {
 
                     _.extend(data, fs.readJSONSync(jsonPath));
                 }
+
+                // The 'path' variable is used in templated to prefix predicatable file paths
+                // E.g. /src/project/swig/layouts/page.html
+                pagePath = path.resolve(src).split(options.config.pages.cwd)[1]
+                pagePath = pagePath.substring(0, pagePath.lastIndexOf('/') + 1);
+
+                data.pagePath = pagePath;
 
                 contents += swigInstance.renderFile(src, data);
             });

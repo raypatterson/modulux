@@ -1,1 +1,1 @@
-module.exports = console.log('Init Common A');
+require('utils/hello.js')('Init Common A');
