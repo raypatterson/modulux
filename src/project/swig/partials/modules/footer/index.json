@@ -1,20 +1,13 @@
 {
+  "copyright": "Copyright 2014 ©",
   "items": [{
-    "partial": "components/nav-pills-item",
-    "title": "Home",
-    "href": "/"
+    "partial": "components/ui-link",
+    "title": "Connect"
   }, {
-    "partial": "components/nav-pills-item",
-    "title": "Page A",
-    "href": "/page-a/"
+    "partial": "components/ui-link",
+    "title": "Partners"
   }, {
-    "partial": "components/nav-dropdown",
-    "title": "Page B",
-    "href": "/page-b/",
-    "items": [{
-      "partial": "components/nav-pills-item",
-      "title": "Page C",
-      "href": "/page-b/page-c/"
-    }]
+    "partial": "components/ui-link",
+    "title": "Careers"
   }]
 }

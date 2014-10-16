@@ -4,18 +4,18 @@
 	"includes": [
 		"vendor-a/scripts",
 		"vendor-b/scripts",
+		"scripts/library-a",
 		"scripts/library-b",
-		"scripts/library-c",
 		"common/scripts/common-a",
-		"common/scripts/common-c"
+		"common/scripts/common-b"
 	],
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
 			"items": [{}, {
 				"partial": "components/nav-pills-item",
-				"title": "Page A",
-				"href": "/page-a/"
+				"title": "Pricing",
+				"href": "/pricing/"
 			}, {
 				"override": true,
 				"partial": "components/nav-dropdown",
@@ -31,33 +31,27 @@
 		"items": [{
 			"partial": "layouts/row",
 			"items": [{
-				"partial": "modules/headline",
-				"text": "empowered manufacturing objectively innovating"
-			}]
-		}, {
-			"partial": "layouts/row",
-			"items": [{
 				"partial": "modules/carousel",
 				"module_id": "top-level-carousel",
 				"items": [{
 					"title": "Business",
 					"image": {
-						"src": "images/carousel-business.jpg"
+						"src": "/images/carousel-business.jpg"
 					}
 				}, {
 					"title": "Money",
 					"image": {
-						"src": "images/carousel-money.jpg"
+						"src": "/images/carousel-money.jpg"
 					}
 				}, {
 					"title": "Numbers",
 					"image": {
-						"src": "images/carousel-numbers.jpg"
+						"src": "/images/carousel-numbers.jpg"
 					}
 				}, {
 					"title": "People",
 					"image": {
-						"src": "images/carousel-people.jpg"
+						"src": "/images/carousel-people.jpg"
 					}
 				}]
 			}]
@@ -72,7 +66,7 @@
 					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
 				},
 				"image": {
-					"src": "images/profile-synergy.jpg"
+					"src": "/images/profile-synergy.jpg"
 				},
 				"button": {
 					"type": "danger"
@@ -86,7 +80,7 @@
 					"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
 				},
 				"image": {
-					"src": "images/profile-efficiency.jpg"
+					"src": "/images/profile-efficiency.jpg"
 				},
 				"button": {
 					"type": "success"
@@ -100,7 +94,7 @@
 					"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
 				},
 				"image": {
-					"src": "images/profile-delivery.jpg"
+					"src": "/images/profile-delivery.jpg"
 				},
 				"button": {
 					"type": "info"
@@ -108,17 +102,7 @@
 			}]
 		}],
 		"footer": {
-			"copyright": "Copyright 2014 ©",
-			"items": [{
-				"partial": "components/ui-link",
-				"title": "Connect"
-			}, {
-				"partial": "components/ui-link",
-				"title": "Partners"
-			}, {
-				"partial": "components/ui-link",
-				"title": "Careers"
-			}]
+			"fix": "this"
 		}
 	}]
 }

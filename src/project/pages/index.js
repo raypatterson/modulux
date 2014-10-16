@@ -1,1 +1,1 @@
-module.exports = console.log('Init Index Include');
+require('utils/hello.js')('Init Page Index', '.index');

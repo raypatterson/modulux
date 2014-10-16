@@ -2,7 +2,7 @@
   
   height: 100px;
   padding: 15px 0;
-  background: rgba(0, 0, 0, 0.125);
+  background: rgba(0, 0, 0, 0.5);
 
   .header-logo {
 
@@ -33,11 +33,10 @@
     }
   }
 
-  .header-content {
-    text-align: right;
-  }
-
   .header-menu {
-    display: inline-block;
+
+    ul {
+      float: right;
+    }
   }
 }

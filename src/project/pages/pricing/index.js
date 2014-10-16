@@ -1,0 +1,1 @@
+require('utils/hello.js')('Init Page Pricing', '.pricing');

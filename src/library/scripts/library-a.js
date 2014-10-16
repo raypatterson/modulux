@@ -1,1 +1,1 @@
-module.exports = console.log('Init Library A');
+require('utils/hello.js')('Init Library A');

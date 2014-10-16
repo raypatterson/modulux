@@ -1,0 +1,87 @@
+{
+  "title": "Pricing",
+  "classes": "pricing",
+  "includes": [
+    "vendor-b/scripts",
+    "vendor-c/scripts",
+    "scripts/library-b",
+    "scripts/library-c",
+    "common/scripts/common-b",
+    "common/scripts/common-c"
+  ],
+  "items": [{
+    "partial": "templates/template-a",
+    "header": {
+      "items": [{}, {
+        "partial": "components/nav-pills-item",
+        "title": "Pricing",
+        "href": "/pricing/"
+      }, {
+        "override": true,
+        "partial": "components/nav-dropdown",
+        "title": "Page B",
+        "href": "/page-b/",
+        "items": [{
+          "partial": "components/nav-pills-item",
+          "title": "Page C",
+          "href": "/page-b/page-c/"
+        }]
+      }]
+    },
+    "items": [{
+      "partial": "layouts/row",
+      "items": [{
+        "partial": "modules/headline",
+        "text": "empowered manufacturing objectively innovating"
+      }]
+    }, {
+      "partial": "layouts/row",
+      "items": [{
+        "partial": "modules/profile",
+        "title": {
+          "text": "Synergy"
+        },
+        "description": {
+          "text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+        },
+        "image": {
+          "src": "/images/profile-synergy.jpg"
+        },
+        "button": {
+          "type": "danger"
+        }
+      }, {
+        "partial": "modules/profile",
+        "title": {
+          "text": "Efficiency"
+        },
+        "description": {
+          "text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
+        },
+        "image": {
+          "src": "/images/profile-efficiency.jpg"
+        },
+        "button": {
+          "type": "success"
+        }
+      }, {
+        "partial": "modules/profile",
+        "title": {
+          "text": "Delivery"
+        },
+        "description": {
+          "text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+        },
+        "image": {
+          "src": "/images/profile-delivery.jpg"
+        },
+        "button": {
+          "type": "info"
+        }
+      }]
+    }],
+    "footer": {
+      "fix": "this"
+    }
+  }]
+}
