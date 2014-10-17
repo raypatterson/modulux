@@ -3,20 +3,20 @@
   "partial": "components/nav-pills",
   "items": [{
     "partial": "components/nav-pills-item",
-    "title": "Home",
+    "title": "Welcome",
     "href": "/"
   }, {
     "partial": "components/nav-pills-item",
-    "title": "Page A",
-    "href": "/page-a/"
+    "title": "Pricing",
+    "href": "/pricing/"
   }, {
     "partial": "components/nav-dropdown",
-    "title": "Page B",
-    "href": "/page-b/",
+    "title": "Products",
+    "href": "/products/",
     "items": [{
       "partial": "components/nav-pills-item",
-      "title": "Page C",
-      "href": "/page-b/page-c/"
+      "title": "Customers",
+      "href": "/products/customers/"
     }]
   }]
 }

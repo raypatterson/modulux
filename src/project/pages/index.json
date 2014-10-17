@@ -12,21 +12,7 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"items": [{}, {
-				"partial": "components/nav-pills-item",
-				"title": "Pricing",
-				"href": "/pricing/"
-			}, {
-				"override": true,
-				"partial": "components/nav-dropdown",
-				"title": "Page B",
-				"href": "/page-b/",
-				"items": [{
-					"partial": "components/nav-pills-item",
-					"title": "Page C",
-					"href": "/page-b/page-c/"
-				}]
-			}]
+			"title": "Your business is our business"
 		},
 		"items": [{
 			"partial": "layouts/row",
@@ -100,9 +86,6 @@
 					"type": "info"
 				}
 			}]
-		}],
-		"footer": {
-			"fix": "this"
-		}
+		}]
 	}]
 }

@@ -1,9 +1,9 @@
 {% macro get_item(slug, item) %}
   {% set partialpath = getPartialPath(slug, item) %}
+  {% set item = getDefaultsData(slug, item) %}
   {% if not item %}
     {% include partialpath %}
   {% else %}
-    {% set item = setDefaultsData(slug, item) %}
     {% if not item.classes %}
       {% set item.classes = "" %}
     {% endif %}

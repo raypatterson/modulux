@@ -1,1 +1,0 @@
-require('utils/hello.js')('Init Component E', '.component-e');
