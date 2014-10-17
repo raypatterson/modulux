@@ -63,32 +63,6 @@ module.exports = function(grunt) {
                     return item;
                 }
 
-            },
-
-            setDefaultsData: function(slug, item) {
-
-                var cfg = options.config.partials;
-                var src = cfg.src + slug + cfg.datapath;
-                var hasDefaults = fs.existsSync(src);
-                var defaults = fs.existsSync(src) ? fs.readJSONSync(src) : {};
-                var traverseDefaults = traverse(defaults);
-
-                var itemDefaults = traverse(item);
-
-                itemDefaults.forEach(function(node) {
-                    if (this.isLeaf) {
-                        if (_.isObject(this.node) && _.isEmpty(this.node)) {
-                            // Allows for placeholders to
-                            // be ignored within Arrays 
-                        } else {
-                            traverseDefaults.set(this.path, this.node);
-                        }
-                    } else if (node.override) {
-                        traverseDefaults.set(this.path, this.node);
-                    }
-                });
-
-                return defaults;
             }
         }
 

@@ -2,6 +2,10 @@
 
 {% block base %}
 
-{{ helpers.get_item('components/ui-text', headline) }}
+<div class="headline {{ classes }}">
+  
+  {{ helpers.get_item('components/ui-text', title) }}
+
+</div>
 
 {% endblock %}

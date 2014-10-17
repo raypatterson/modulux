@@ -1,14 +1,19 @@
 {
   "title": {
+    "text": "default title text",
     "tag": "h3",
     "classes": "title"
   },
   "image": {
+    "src": "http://placehold.it/250x250",
     "type": "circle",
     "classes": "center-block"
   },
   "button": {
     "type": "info",
     "title": "Learn More"
+  },
+  "description": {
+    "text": "default description text"
   }
 }

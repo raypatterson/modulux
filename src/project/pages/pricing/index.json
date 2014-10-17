@@ -15,48 +15,14 @@
 			"title": "Your money is important to us"
 		},
 		"items": [{
-			"partial": "layouts/row",
-			"items": [{
-				"partial": "modules/carousel",
-				"module_id": "top-level-carousel",
-				"items": [{
-					"title": "Business",
-					"image": {
-						"src": "/images/carousel-business.jpg"
-					}
-				}, {
-					"title": "Money",
-					"image": {
-						"src": "/images/carousel-money.jpg"
-					}
-				}, {
-					"title": "Numbers",
-					"image": {
-						"src": "/images/carousel-numbers.jpg"
-					}
-				}, {
-					"title": "People",
-					"image": {
-						"src": "/images/carousel-people.jpg"
-					}
-				}]
-			}]
+			"partial": "modules/headline",
+			"title": {
+				"text": "objectively seize scalable metrics"
+			}
 		}, {
 			"partial": "layouts/row",
 			"items": [{
-				"partial": "modules/profile",
-				"title": {
-					"text": "Synergy"
-				},
-				"description": {
-					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
-				},
-				"image": {
-					"src": "/images/profile-synergy.jpg"
-				},
-				"button": {
-					"type": "danger"
-				}
+				"partial": "modules/profile"
 			}, {
 				"partial": "modules/profile",
 				"title": {

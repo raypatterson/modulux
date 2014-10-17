@@ -4,5 +4,5 @@ require('slabText/css/slabtext.css');
 require('slabText/js/jquery.slabtext.js');
 
 $(function(window) {
-  $('.headline').slabText();
+  $('.headline .text').slabText();
 });

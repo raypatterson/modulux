@@ -1,4 +1,3 @@
- ☐ Create Swig file loader to replace addResources helper
  ☐ Create list of features:
      Compose page with JSON manifest
      Resources loaded automatically
@@ -7,5 +6,4 @@
      Page level content overrides 
 
  ☐ Remove source directory from Swig file paths
- ☐ Bug: No override data causes weird behaviour 
  ☐ Improvement: Grunt tasks run twice on each file change
