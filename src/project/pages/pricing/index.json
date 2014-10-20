@@ -22,71 +22,56 @@
 		}, {
 			"partial": "layouts/row",
 			"items": [{
-				"partial": "modules/profile",
-				"image": {
+				"partial": "modules/tout/price",
+				"items": [{
 					"src": "/images/price-developer.jpg"
-				},
-				"title": {
+				}, {
 					"text": "Developer"
-				},
-				"subtitle": {
+				}, {
 					"text": "Free"
-				},
-				"button": {
-					"type": "danger",
-					"text": "sign up"
-				},
-				"details": {
+				}, {
+					"type": "danger"
+				}, {
 					"items": [
 						"Globally incubate standards compliant channels before scalable benefits.",
 						"Quickly disseminate superior deliverables whereas web-enabled applications.",
 						"Interactively coordinate proactive e-commerce via process-centric outside the box thinking."
 					]
-				}
+				}]
 			}, {
-				"partial": "modules/profile",
-				"image": {
+				"partial": "modules/tout/price",
+				"items": [{
 					"src": "/images/price-project.jpg"
-				},
-				"title": {
+				}, {
 					"text": "Project"
-				},
-				"subtitle": {
+				}, {
 					"text": "$10/month"
-				},
-				"button": {
-					"type": "success",
-					"text": "sign up"
-				},
-				"details": {
+				}, {
+					"type": "success"
+				}, {
 					"items": [
 						"Phosfluorescently engage worldwide methodologies with web-enabled technology.",
 						"Completely pursue scalable customer service through sustainable potentialities.",
 						"Quickly drive clicks-and-mortar catalysts for change before vertical architectures."
 					]
-				}
+				}]
 			}, {
-				"partial": "modules/profile",
-				"image": {
+				"partial": "modules/tout/price",
+				"items": [{
 					"src": "/images/price-enterprise.jpg"
-				},
-				"title": {
+				}, {
 					"text": "Enterprise"
-				},
-				"subtitle": {
+				}, {
 					"text": "$100/month"
-				},
-				"button": {
-					"type": "info",
-					"text": "sign up"
-				},
-				"details": {
+				}, {
+					"type": "info"
+				}, {
 					"items": [
 						"Proactively envisioned multimedia based expertise and cross-media growth strategies.",
 						"Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.",
 						"Holistically pontificate installed base portals after maintainable products."
 					]
-				}
+				}]
 			}]
 		}]
 	}]

@@ -1,0 +1,22 @@
+{
+  "classes": "info",
+  "items": [{
+    "partial": "components/ui-image",
+    "classes": "center-block",
+    "src": "http://placehold.it/250x250",
+    "type": "circle"
+  }, {
+    "partial": "components/ui-text",
+    "classes": "title",
+    "tag": "h3",
+    "text": "default title text"
+  }, {
+    "partial": "components/ui-button",
+    "type": "info",
+    "text": "learn more"
+  }, {
+    "partial": "components/ui-text",
+    "classes": "description",
+    "text": "default description text"
+  }]
+}

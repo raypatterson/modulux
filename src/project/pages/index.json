@@ -44,47 +44,38 @@
 		}, {
 			"partial": "layouts/row",
 			"items": [{
-				"partial": "modules/profile",
-				"title": {
-					"text": "Synergy"
-				},
-				"description": {
-					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
-				},
-				"image": {
+				"partial": "modules/tout/info",
+				"items": [{
 					"src": "/images/profile-synergy.jpg"
-				},
-				"button": {
+				}, {
+					"text": "Synergy"
+				}, {
 					"type": "danger"
-				}
+				}, {
+					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+				}]
 			}, {
-				"partial": "modules/profile",
-				"title": {
-					"text": "Efficiency"
-				},
-				"description": {
-					"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
-				},
-				"image": {
+				"partial": "modules/tout/info",
+				"items": [{
 					"src": "/images/profile-efficiency.jpg"
-				},
-				"button": {
+				}, {
+					"text": "Efficiency"
+				}, {
 					"type": "success"
-				}
+				}, {
+					"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
+				}]
 			}, {
-				"partial": "modules/profile",
-				"title": {
-					"text": "Delivery"
-				},
-				"description": {
-					"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
-				},
-				"image": {
+				"partial": "modules/tout/info",
+				"items": [{
 					"src": "/images/profile-delivery.jpg"
-				},
-				"button": {
+				}, {
+					"text": "Delivery"
+				}, {
 					"type": "info"
-				}
+				}, {
+					"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+				}]
 			}]
 		}]
 	}]
