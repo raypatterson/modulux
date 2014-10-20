@@ -7,6 +7,11 @@
     padding: 1%;
   }
 
+  .subtitle {
+    font-size: 4vw;
+    padding: 1%;
+  }
+
   .profile-container {
     background: rgba(0, 0, 0, 0.05);
     padding-top: 30px;
@@ -32,8 +37,17 @@
     // margin: 5%;
   }
   
-  p {
-    padding: 5%;
+  .description {
+    p {
+      padding: 5%;
+      min-height: 200px;
+    }
+  }
+
+  .details {
+    list-style-type: none;
+    padding: 0 5%;
+    margin: 0;
     min-height: 200px;
   }
 }

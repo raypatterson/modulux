@@ -1,19 +1,29 @@
 {
   "title": {
-    "text": "default title text",
+    "classes": "title",
     "tag": "h3",
-    "classes": "title"
+    "text": "default title text"
+  },
+  "subtitle": {
+    "classes": "subtitle",
+    "tag": "h4",
+    "text": ""
   },
   "image": {
+    "classes": "center-block",
     "src": "http://placehold.it/250x250",
-    "type": "circle",
-    "classes": "center-block"
+    "type": "circle"
   },
   "button": {
     "type": "info",
-    "title": "Learn More"
+    "text": "default button text"
   },
   "description": {
-    "text": "default description text"
+    "classes": "description",
+    "text": ""
+  },
+  "details": {
+    "classes": "details",
+    "items": ["xxx"]
   }
 }
