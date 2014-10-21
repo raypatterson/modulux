@@ -2,11 +2,11 @@
   "name": "modulux",
   "version": "0.3.1",
   "devDependencies": {
-    "bootstrap-sass-official": "~3.2.0+2",
     "bootstrap-material-design": "~0.1.0",
     "jquery-fittext.js": "~1.2.0",
     "slabText": "~2.2.0",
-    "matthewlein-jQuery-widowFix": "~1.3.2"
+    "matthewlein-jQuery-widowFix": "~1.3.2",
+    "bootstrap-sass-official": "~3.2.0"
   },
   "dependencies": {}
 }

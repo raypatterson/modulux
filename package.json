@@ -37,6 +37,7 @@
     "style-loader": "^0.8.0",
     "swig": "^1.4.2",
     "time-grunt": "^1.0.0",
+    "traverse": "^0.6.6",
     "url-loader": "^0.5.5",
     "webpack": "^1.4.4",
     "webpack-dev-server": "^1.6.5"
