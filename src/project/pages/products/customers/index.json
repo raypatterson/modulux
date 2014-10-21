@@ -12,7 +12,9 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "Our customers are real people to us"
+			"image": {
+				"title": "Our customers are real to us"
+			}
 		},
 		"items": [{
 			"partial": "layouts/row",

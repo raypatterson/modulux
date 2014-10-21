@@ -1,6 +1,9 @@
 {
-  "title": "Your business is our business",
   "partial": "components/nav-pills",
+  "image": {
+    "src": "/images/logo.png",
+    "title": "Your business is our business"
+  },
   "items": [{
     "partial": "components/nav-pills-item",
     "title": "Welcome",

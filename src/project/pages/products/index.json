@@ -12,7 +12,9 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "Solutions that will grow on you"
+			"image": {
+				"title": "Solutions that will grow on you"
+			}
 		},
 		"items": [{
 			"partial": "layouts/row",

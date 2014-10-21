@@ -12,7 +12,9 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
+		"image": {
 			"title": "Your business is our business"
+		}
 		},
 		"items": [{
 			"partial": "layouts/row",

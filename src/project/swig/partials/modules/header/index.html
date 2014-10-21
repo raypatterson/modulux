@@ -5,12 +5,13 @@
 <header class="row header {{ classes }}">
 
   <div class="col-xs-6 header-logo">
-    <div class="header-logo-wrapper">
-      <div class="header-logo-image"></div>
+
+    <img class="header-logo-image" src="{{ image.src }}" alt="{{ title }}" />
+
+    <div class="header-logo-title">
+      <h1 class="h4">{{ image.title }}</h1>
     </div>
-    <div class="header-title">
-      <h1 class="h4">{{ title }}</h1>
-    </div>
+
   </div>
   
   <nav class="col-xs-6 header-menu">

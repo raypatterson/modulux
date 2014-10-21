@@ -12,7 +12,9 @@
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
-			"title": "Your money is important to us"
+			"image": {
+				"title": "Your money is important to us"
+			}
 		},
 		"items": [{
 			"partial": "layouts/row",

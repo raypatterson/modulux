@@ -27,6 +27,7 @@
     "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-relative-root": "^0.2.2",
     "grunt-webpack": "^1.0.8",
     "image-webpack-loader": "0.0.7",
     "json-loader": "^0.5.1",
