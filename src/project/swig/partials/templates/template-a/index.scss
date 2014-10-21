@@ -1,9 +1,0 @@
-@import "common/styles/mixins.scss";
-
-.page-title {
-  font-size: 5rem;
-}
-
-.template {
-  @include custom-gradient-background(#79829e);
-}

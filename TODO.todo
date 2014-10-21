@@ -1,9 +1,0 @@
- ☐ Create list of features:
-     Compose page with JSON manifest
-     Resources loaded automatically
-     Allows modular code organization
-     Module level content defaults
-     Page level content overrides 
-
- ☐ Remove source directory from Swig file paths
- ☐ Improvement: Grunt tasks run twice on each file change
