@@ -2,12 +2,12 @@
 	"title": "Products",
 	"classes": "products",
 	"includes": [
-		"vendor-c/scripts",
 		"vendor-a/scripts",
-		"scripts/library-c",
+		"vendor-c/scripts",
 		"scripts/library-a",
-		"common/scripts/common-c",
-		"common/scripts/common-a"
+		"scripts/library-c",
+		"common/scripts/common-a",
+		"common/scripts/common-c"
 	],
 	"items": [{
 		"partial": "templates/template-a",

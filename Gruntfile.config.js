@@ -34,15 +34,6 @@ module.exports = {
       }
     },
 
-    webpackconfig: {
-      entry: {
-        templates: ['./src/_entry/*.js'],
-        match: ['./src/project/pages/**/*.json'],
-        cwd: './src/project/pages/',
-        ext: 'json'
-      }
-    },
-
     webpackrequire: {
       entry: {
         templates: ['./src/_entry/*.js'],
@@ -71,7 +62,14 @@ module.exports = {
 
     webpack: {
       module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
-      watch: ['./src/**/*.{js,json,scss}', '!./bower_components', '!./node_modules', '!./src/vendor/**/*.*'],
+      watch: [
+        './src/project/pages/**/*.swig',
+        './src/project/swig/partials/**/*.html',
+        './src/**/*.{json,js,scss}',
+        '!./src/vendor/**/*.*',
+        '!./bower_components',
+        '!./node_modules'
+      ],
       match: ['./src/*.js', '!./src/*.spec.js'],
       cwd: '.',
       ext: 'js'

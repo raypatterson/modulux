@@ -2,12 +2,12 @@
 	"title": "Pricing",
 	"classes": "pricing",
 	"includes": [
+		"vendor-a/scripts",
 		"vendor-b/scripts",
-		"vendor-c/scripts",
+		"scripts/library-a",
 		"scripts/library-b",
-		"scripts/library-c",
-		"common/scripts/common-b",
-		"common/scripts/common-c"
+		"common/scripts/common-a",
+		"common/scripts/common-b"
 	],
 	"items": [{
 		"partial": "templates/template-a",
@@ -15,10 +15,13 @@
 			"title": "Your money is important to us"
 		},
 		"items": [{
-			"partial": "modules/headline",
-			"title": {
-				"text": "objectively seize scalable metrics"
-			}
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "modules/headline",
+				"title": {
+					"text": "objectively seize scalable metrics"
+				}
+			}]
 		}, {
 			"partial": "layouts/row",
 			"items": [{

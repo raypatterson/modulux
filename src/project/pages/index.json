@@ -1,6 +1,6 @@
 {
-	"title": "Home",
-	"classes": "index",
+	"title": "Welcome",
+	"classes": "home",
 	"includes": [
 		"vendor-a/scripts",
 		"vendor-b/scripts",
