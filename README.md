@@ -6,7 +6,7 @@ Using [webpack](https://webpack.github.io/) & [Swig](https://paularmstrong.githu
 - Load page dependencies such as JavaScript, CSS and Images in one file.
 - Split common page dependencies (for multiple pages or "entry points") into a common file.
 
-See a working demo (here)[http://raypatterson.github.io/modulux/].
+See a working demo [here](http://raypatterson.github.io/modulux/).
 
 ---
 
