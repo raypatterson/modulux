@@ -1,6 +1,6 @@
 {
-	"title": "Home",
-	"classes": "index",
+	"title": "Customers",
+	"classes": "customers",
 	"includes": [
 		"vendor-a/scripts",
 		"vendor-b/scripts",
@@ -13,6 +13,57 @@
 		"partial": "templates/template-a",
 		"header": {
 			"title": "Our customers are real people to us"
-		}
+		},
+		"items": [{
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "modules/tout/profile",
+				"items": [{
+					"src": "/images/profile-buckminster-fuller.jpg"
+				}, {
+					"text": "Buckminster Fuller"
+				}, {
+					"text": "Architect &amp; Inventor"
+				}, {
+					"text": "<p>R. Buckminster Fuller was a renowned 20th century inventor and visionary born in Milton, Massachusetts on July 12, 1895.</p><p>Dedicating his life to making the world work for all of humanity, Fuller operated as a practical philosopher who demonstrated his ideas as inventions that he called “artifacts.” Fuller did not limit himself to one field but worked as a 'comprehensive anticipatory design scientist' to solve global problems surrounding housing, shelter, transportation, education, energy, ecological destruction, and poverty.</p><p>Throughout the course of his life Fuller held 28 patents, authored 28 books, received 47 honorary degrees. And while his most well know artifact, the geodesic dome, has been produced over 300,000 times worldwide, Fuller's true impact on the world today can be found in his continued influence upon generations of designers, architects, scientists and artists working to create a more sustainable planet.</p>"
+				}]
+			}, {
+				"partial": "modules/tout/profile",
+				"items": [{
+					"src": "/images/profile-delia-derbyshire.jpg"
+				}, {
+					"text": "Delia Derbyshire"
+				}, {
+					"text": "Musician &amp; Composer"
+				}, {
+					"text": "<p>Delia Derbyshire is one of the earliest and most influential electronic sound synthesists. She was musically active from 1962 until the mid seventies, then briefly again for a few years before she died in 2001 at the age of 64.</p><p>Although her revolutionary sounds are familiar to over a hundred million people through the theme to the television series \"Doctor Who\" and the seminal album of 1969 \"An Electric Storm\" she was hardly ever credited and her name is almost unknown. The bulk of her musical production and atmospheric sound for television and radio programmes is on tape in the BBC Sound Archives.</p><p>After her death, 267 tapes from her attic as well as a box of her papers were consigned to the archive, then in 2007 donated to Manchester University Center for Screen Studies who have digitized them but only three new tracks have been released since then, on compilation albums with music from other composers. Most will probably never be heard again. Mark Ayres made a catalogue of the BBC archives and of the attic tapes but neither has been published.</p>"
+				}]
+			}]
+		}, {
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "modules/tout/profile",
+				"items": [{
+					"src": "/images/product-growth.jpg"
+				}, {
+					"text": "Growth"
+				}, {
+					"text": "success"
+				}, {
+					"text": "<p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>"
+				}]
+			}, {
+				"partial": "modules/tout/profile",
+				"items": [{
+					"src": "/images/product-life.jpg"
+				}, {
+					"text": "Life"
+				}, {
+					"text": "info"
+				}, {
+					"text": "<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>"
+				}]
+			}]
+		}]
 	}]
 }

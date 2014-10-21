@@ -1,18 +1,55 @@
 {
-	"title": "Home",
-	"classes": "index",
+	"title": "Products",
+	"classes": "products",
 	"includes": [
+		"vendor-c/scripts",
 		"vendor-a/scripts",
-		"vendor-b/scripts",
+		"scripts/library-c",
 		"scripts/library-a",
-		"scripts/library-b",
-		"common/scripts/common-a",
-		"common/scripts/common-b"
+		"common/scripts/common-c",
+		"common/scripts/common-a"
 	],
 	"items": [{
 		"partial": "templates/template-a",
 		"header": {
 			"title": "Solutions that will grow on you"
-		}
+		},
+		"items": [{
+			"partial": "layouts/row",
+			"items": [{
+				"partial": "modules/tout/info",
+				"items": [{
+					"src": "/images/product-essence.jpg"
+				}, {
+					"text": "Essence"
+				}, {
+					"type": "danger"
+				}, {
+					"text": "Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service."
+				}]
+			}, {
+				"partial": "modules/tout/info",
+				"items": [{
+					"src": "/images/product-growth.jpg"
+				}, {
+					"text": "Growth"
+				}, {
+					"type": "success"
+				}, {
+					"text": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions."
+				}]
+			}, {
+				"partial": "modules/tout/info",
+				"items": [{
+					"src": "/images/product-life.jpg"
+				}, {
+					"text": "Life"
+				}, {
+					"type": "info"
+				}, {
+					"text": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+				}]
+			}]
+		}]
 	}]
 }

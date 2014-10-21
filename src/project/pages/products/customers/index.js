@@ -1,1 +1,1 @@
-require('utils/hello.js')('Init Page Index', '.index');
+require('utils/hello.js')('Init Page Customers', '.customers');

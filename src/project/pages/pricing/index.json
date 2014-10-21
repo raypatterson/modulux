@@ -1,13 +1,13 @@
 {
-	"title": "Home",
-	"classes": "index",
+	"title": "Pricing",
+	"classes": "pricing",
 	"includes": [
-		"vendor-a/scripts",
 		"vendor-b/scripts",
-		"scripts/library-a",
+		"vendor-c/scripts",
 		"scripts/library-b",
-		"common/scripts/common-a",
-		"common/scripts/common-b"
+		"scripts/library-c",
+		"common/scripts/common-b",
+		"common/scripts/common-c"
 	],
 	"items": [{
 		"partial": "templates/template-a",

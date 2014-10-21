@@ -46,7 +46,7 @@
 			"items": [{
 				"partial": "modules/tout/info",
 				"items": [{
-					"src": "/images/profile-synergy.jpg"
+					"src": "/images/info-synergy.jpg"
 				}, {
 					"text": "Synergy"
 				}, {
@@ -57,7 +57,7 @@
 			}, {
 				"partial": "modules/tout/info",
 				"items": [{
-					"src": "/images/profile-efficiency.jpg"
+					"src": "/images/info-efficiency.jpg"
 				}, {
 					"text": "Efficiency"
 				}, {
@@ -68,7 +68,7 @@
 			}, {
 				"partial": "modules/tout/info",
 				"items": [{
-					"src": "/images/profile-delivery.jpg"
+					"src": "/images/info-delivery.jpg"
 				}, {
 					"text": "Delivery"
 				}, {
