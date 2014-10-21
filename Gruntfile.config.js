@@ -10,17 +10,7 @@ module.exports = {
 
   app_files: {
 
-    html: ['src/*.html'],
-
-    assets_src: ['./{,*/}fonts/{,*/}*', './{,*/}images/{,*/}*'],
-
-    copy: {
-      cwd: './src/project/',
-      src: ['**/*.{jpg,png,gif,svg}']
-    },
-
     swig: {
-      watch: ['./src/project/**/*.{swig,json}', './src/project/swig/**/*.html', '!./src/vendor/{,*/}*.*'],
       basepath: __dirname + '',
       pages: {
         cwd: 'src/project/pages/',
@@ -55,11 +45,6 @@ module.exports = {
       ext: 'json'
     },
 
-    sass: {
-      image_path: '/images',
-      include_paths: __dirname + '/src/project/' + ', bower_components/'
-    },
-
     webpack: {
       module_dirs: ['../node_modules', '../bower_components', './vendor', './library', './project', './project/swig/partials/'],
       watch: [
@@ -75,7 +60,19 @@ module.exports = {
       ext: 'js'
     },
 
+    sass: {
+      image_path: '/images',
+      include_paths: __dirname + '/src/project/' + ', bower_components/'
+    },
+
     js: ['src/{,*/}*.js', '!src/{,*/}*.spec.js', '!src/_entry/*.js'],
     jsunit: ['src/**/*.spec.js'],
+
+    copy: {
+      cwd: './src/project/',
+      src: ['**/*.{jpg,png,gif,svg}']
+    },
+
+    assets_src: ['./{,*/}fonts/{,*/}*', './{,*/}images/{,*/}*'],
   }
 };
