@@ -14,7 +14,7 @@ Using [webpack](https://webpack.github.io/) & [Swig](https://paularmstrong.githu
 
 It uses Swig and Webpack (and for now, [Grunt](http://gruntjs.com/)).
 
-A long and detailed description of how this works isn't valuable since it will undergoing much change with the first major update. If you've used Swig or Webpack before you'll probably be able to understand what's going on. 
+A long and detailed description of how this works isn't valuable since it will be undergoing much change with the first major update. If you've used Swig or Webpack before you'll probably be able to understand what's going on. 
 
 If you have any questions, [open an issue](https://github.com/RayPatterson/modulux/issues)!
 
